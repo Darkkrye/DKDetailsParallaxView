@@ -1,0 +1,611 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8F655AED1CA706B500E04615 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F655AEC1CA706B500E04615 /* AppDelegate.swift */; };
+		8F655AF41CA706B500E04615 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F655AF31CA706B500E04615 /* Assets.xcassets */; };
+		8F655AF71CA706B500E04615 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F655AF51CA706B500E04615 /* LaunchScreen.storyboard */; };
+		8F655B021CA706B500E04615 /* DetailsParallaxViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F655B011CA706B500E04615 /* DetailsParallaxViewTests.swift */; };
+		8F655B0D1CA706B500E04615 /* DetailsParallaxViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F655B0C1CA706B500E04615 /* DetailsParallaxViewUITests.swift */; };
+		8F655B1C1CA7073D00E04615 /* ParallaxDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F655B1B1CA7073D00E04615 /* ParallaxDetailsTableViewController.swift */; };
+		8F655B201CA7079000E04615 /* InfoDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F655B1E1CA7079000E04615 /* InfoDetailsTableViewCell.swift */; };
+		8F655B211CA7079000E04615 /* InfoDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F655B1F1CA7079000E04615 /* InfoDetailsTableViewCell.xib */; };
+		8F655B241CA7D61C00E04615 /* ConseilsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F655B221CA7D61C00E04615 /* ConseilsTableViewCell.swift */; };
+		8F655B251CA7D61C00E04615 /* ConseilsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F655B231CA7D61C00E04615 /* ConseilsTableViewCell.xib */; };
+		8F655B281CA8616500E04615 /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F655B261CA8616500E04615 /* DescriptionTableViewCell.swift */; };
+		8F655B291CA8616500E04615 /* DescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F655B271CA8616500E04615 /* DescriptionTableViewCell.xib */; };
+		8F655B2C1CA862B800E04615 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F655B2A1CA862B800E04615 /* MoreTableViewCell.swift */; };
+		8F655B2D1CA862B800E04615 /* MoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F655B2B1CA862B800E04615 /* MoreTableViewCell.xib */; };
+		8F655B321CA8697C00E04615 /* RatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F655B301CA8697C00E04615 /* RatingTableViewCell.swift */; };
+		8F655B351CA879B600E04615 /* RatingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F655B341CA879B600E04615 /* RatingTableViewCell.xib */; };
+		8F655B371CA87FDC00E04615 /* ParallaxDetailsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F655B361CA87FDC00E04615 /* ParallaxDetailsViewProtocol.swift */; };
+		8F655B391CA95F6F00E04615 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F655B381CA95F6F00E04615 /* Main.storyboard */; };
+		8F655B3C1CA970D700E04615 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F655B3A1CA970D700E04615 /* ImageTableViewCell.swift */; };
+		8F655B3D1CA970D700E04615 /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F655B3B1CA970D700E04615 /* ImageTableViewCell.xib */; };
+		8F655B441CA979DC00E04615 /* KICamera.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F655B401CA979DC00E04615 /* KICamera.png */; };
+		8F655B451CA979DC00E04615 /* KICamera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F655B411CA979DC00E04615 /* KICamera@2x.png */; };
+		8F655B461CA979DC00E04615 /* KIImagePager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F655B431CA979DC00E04615 /* KIImagePager.m */; };
+		8F655B491CA984A500E04615 /* MoreImagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F655B471CA984A500E04615 /* MoreImagesTableViewCell.swift */; };
+		8F655B4A1CA984A500E04615 /* MoreImagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F655B481CA984A500E04615 /* MoreImagesTableViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8F655AFE1CA706B500E04615 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F655AE11CA706B400E04615 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F655AE81CA706B400E04615;
+			remoteInfo = DetailsParallaxView;
+		};
+		8F655B091CA706B500E04615 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F655AE11CA706B400E04615 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F655AE81CA706B400E04615;
+			remoteInfo = DetailsParallaxView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8F655AE91CA706B400E04615 /* DetailsParallaxView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DetailsParallaxView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F655AEC1CA706B500E04615 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8F655AF31CA706B500E04615 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8F655AF61CA706B500E04615 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8F655AF81CA706B500E04615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F655AFD1CA706B500E04615 /* DetailsParallaxViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DetailsParallaxViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F655B011CA706B500E04615 /* DetailsParallaxViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsParallaxViewTests.swift; sourceTree = "<group>"; };
+		8F655B031CA706B500E04615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F655B081CA706B500E04615 /* DetailsParallaxViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DetailsParallaxViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F655B0C1CA706B500E04615 /* DetailsParallaxViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsParallaxViewUITests.swift; sourceTree = "<group>"; };
+		8F655B0E1CA706B500E04615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F655B1B1CA7073D00E04615 /* ParallaxDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParallaxDetailsTableViewController.swift; path = ParallaxDetailsView/ParallaxDetailsTableViewController.swift; sourceTree = "<group>"; };
+		8F655B1E1CA7079000E04615 /* InfoDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoDetailsTableViewCell.swift; path = ParallaxDetailsView/DetailsCell/InfoDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		8F655B1F1CA7079000E04615 /* InfoDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InfoDetailsTableViewCell.xib; path = ParallaxDetailsView/DetailsCell/InfoDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		8F655B221CA7D61C00E04615 /* ConseilsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConseilsTableViewCell.swift; path = ParallaxDetailsView/DetailsCell/ConseilsTableViewCell.swift; sourceTree = "<group>"; };
+		8F655B231CA7D61C00E04615 /* ConseilsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ConseilsTableViewCell.xib; path = ParallaxDetailsView/DetailsCell/ConseilsTableViewCell.xib; sourceTree = "<group>"; };
+		8F655B261CA8616500E04615 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DescriptionTableViewCell.swift; path = ParallaxDetailsView/DetailsCell/DescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		8F655B271CA8616500E04615 /* DescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DescriptionTableViewCell.xib; path = ParallaxDetailsView/DetailsCell/DescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		8F655B2A1CA862B800E04615 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreTableViewCell.swift; path = ParallaxDetailsView/DetailsCell/MoreTableViewCell.swift; sourceTree = "<group>"; };
+		8F655B2B1CA862B800E04615 /* MoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MoreTableViewCell.xib; path = ParallaxDetailsView/DetailsCell/MoreTableViewCell.xib; sourceTree = "<group>"; };
+		8F655B301CA8697C00E04615 /* RatingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RatingTableViewCell.swift; path = ParallaxDetailsView/DetailsCell/RatingTableViewCell.swift; sourceTree = "<group>"; };
+		8F655B341CA879B600E04615 /* RatingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatingTableViewCell.xib; sourceTree = "<group>"; };
+		8F655B361CA87FDC00E04615 /* ParallaxDetailsViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParallaxDetailsViewProtocol.swift; path = ParallaxDetailsView/DetailsCell/ParallaxDetailsViewProtocol.swift; sourceTree = "<group>"; };
+		8F655B381CA95F6F00E04615 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		8F655B3A1CA970D700E04615 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageTableViewCell.swift; path = ParallaxDetailsView/DetailsCell/ImageTableViewCell.swift; sourceTree = "<group>"; };
+		8F655B3B1CA970D700E04615 /* ImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageTableViewCell.xib; path = ParallaxDetailsView/DetailsCell/ImageTableViewCell.xib; sourceTree = "<group>"; };
+		8F655B3F1CA979DC00E04615 /* DetailsParallaxView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DetailsParallaxView-Bridging-Header.h"; sourceTree = "<group>"; };
+		8F655B401CA979DC00E04615 /* KICamera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KICamera.png; sourceTree = "<group>"; };
+		8F655B411CA979DC00E04615 /* KICamera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KICamera@2x.png"; sourceTree = "<group>"; };
+		8F655B421CA979DC00E04615 /* KIImagePager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIImagePager.h; sourceTree = "<group>"; };
+		8F655B431CA979DC00E04615 /* KIImagePager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIImagePager.m; sourceTree = "<group>"; };
+		8F655B471CA984A500E04615 /* MoreImagesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreImagesTableViewCell.swift; path = ParallaxDetailsView/DetailsCell/MoreImagesTableViewCell.swift; sourceTree = "<group>"; };
+		8F655B481CA984A500E04615 /* MoreImagesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MoreImagesTableViewCell.xib; path = ParallaxDetailsView/DetailsCell/MoreImagesTableViewCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8F655AE61CA706B400E04615 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F655AFA1CA706B500E04615 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F655B051CA706B500E04615 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8F655AE01CA706B400E04615 = {
+			isa = PBXGroup;
+			children = (
+				8F655AEB1CA706B500E04615 /* DetailsParallaxView */,
+				8F655B001CA706B500E04615 /* DetailsParallaxViewTests */,
+				8F655B0B1CA706B500E04615 /* DetailsParallaxViewUITests */,
+				8F655AEA1CA706B400E04615 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8F655AEA1CA706B400E04615 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8F655AE91CA706B400E04615 /* DetailsParallaxView.app */,
+				8F655AFD1CA706B500E04615 /* DetailsParallaxViewTests.xctest */,
+				8F655B081CA706B500E04615 /* DetailsParallaxViewUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8F655AEB1CA706B500E04615 /* DetailsParallaxView */ = {
+			isa = PBXGroup;
+			children = (
+				8F655B1A1CA706C500E04615 /* ParallaxDetailsView */,
+				8F655AEC1CA706B500E04615 /* AppDelegate.swift */,
+				8F655B381CA95F6F00E04615 /* Main.storyboard */,
+				8F655AF31CA706B500E04615 /* Assets.xcassets */,
+				8F655AF51CA706B500E04615 /* LaunchScreen.storyboard */,
+				8F655AF81CA706B500E04615 /* Info.plist */,
+			);
+			path = DetailsParallaxView;
+			sourceTree = "<group>";
+		};
+		8F655B001CA706B500E04615 /* DetailsParallaxViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				8F655B011CA706B500E04615 /* DetailsParallaxViewTests.swift */,
+				8F655B031CA706B500E04615 /* Info.plist */,
+			);
+			path = DetailsParallaxViewTests;
+			sourceTree = "<group>";
+		};
+		8F655B0B1CA706B500E04615 /* DetailsParallaxViewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8F655B0C1CA706B500E04615 /* DetailsParallaxViewUITests.swift */,
+				8F655B0E1CA706B500E04615 /* Info.plist */,
+			);
+			path = DetailsParallaxViewUITests;
+			sourceTree = "<group>";
+		};
+		8F655B1A1CA706C500E04615 /* ParallaxDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				8F655B3E1CA979A600E04615 /* KIImagePager */,
+				8F655B1D1CA7074600E04615 /* DetailsCell */,
+				8F655B1B1CA7073D00E04615 /* ParallaxDetailsTableViewController.swift */,
+			);
+			name = ParallaxDetailsView;
+			sourceTree = "<group>";
+		};
+		8F655B1D1CA7074600E04615 /* DetailsCell */ = {
+			isa = PBXGroup;
+			children = (
+				8F655B361CA87FDC00E04615 /* ParallaxDetailsViewProtocol.swift */,
+				8F655B3A1CA970D700E04615 /* ImageTableViewCell.swift */,
+				8F655B3B1CA970D700E04615 /* ImageTableViewCell.xib */,
+				8F655B1E1CA7079000E04615 /* InfoDetailsTableViewCell.swift */,
+				8F655B1F1CA7079000E04615 /* InfoDetailsTableViewCell.xib */,
+				8F655B261CA8616500E04615 /* DescriptionTableViewCell.swift */,
+				8F655B271CA8616500E04615 /* DescriptionTableViewCell.xib */,
+				8F655B221CA7D61C00E04615 /* ConseilsTableViewCell.swift */,
+				8F655B231CA7D61C00E04615 /* ConseilsTableViewCell.xib */,
+				8F655B301CA8697C00E04615 /* RatingTableViewCell.swift */,
+				8F655B341CA879B600E04615 /* RatingTableViewCell.xib */,
+				8F655B2A1CA862B800E04615 /* MoreTableViewCell.swift */,
+				8F655B2B1CA862B800E04615 /* MoreTableViewCell.xib */,
+				8F655B471CA984A500E04615 /* MoreImagesTableViewCell.swift */,
+				8F655B481CA984A500E04615 /* MoreImagesTableViewCell.xib */,
+			);
+			name = DetailsCell;
+			sourceTree = "<group>";
+		};
+		8F655B3E1CA979A600E04615 /* KIImagePager */ = {
+			isa = PBXGroup;
+			children = (
+				8F655B401CA979DC00E04615 /* KICamera.png */,
+				8F655B411CA979DC00E04615 /* KICamera@2x.png */,
+				8F655B421CA979DC00E04615 /* KIImagePager.h */,
+				8F655B431CA979DC00E04615 /* KIImagePager.m */,
+				8F655B3F1CA979DC00E04615 /* DetailsParallaxView-Bridging-Header.h */,
+			);
+			name = KIImagePager;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8F655AE81CA706B400E04615 /* DetailsParallaxView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F655B111CA706B500E04615 /* Build configuration list for PBXNativeTarget "DetailsParallaxView" */;
+			buildPhases = (
+				8F655AE51CA706B400E04615 /* Sources */,
+				8F655AE61CA706B400E04615 /* Frameworks */,
+				8F655AE71CA706B400E04615 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DetailsParallaxView;
+			productName = DetailsParallaxView;
+			productReference = 8F655AE91CA706B400E04615 /* DetailsParallaxView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8F655AFC1CA706B500E04615 /* DetailsParallaxViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F655B141CA706B500E04615 /* Build configuration list for PBXNativeTarget "DetailsParallaxViewTests" */;
+			buildPhases = (
+				8F655AF91CA706B500E04615 /* Sources */,
+				8F655AFA1CA706B500E04615 /* Frameworks */,
+				8F655AFB1CA706B500E04615 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8F655AFF1CA706B500E04615 /* PBXTargetDependency */,
+			);
+			name = DetailsParallaxViewTests;
+			productName = DetailsParallaxViewTests;
+			productReference = 8F655AFD1CA706B500E04615 /* DetailsParallaxViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8F655B071CA706B500E04615 /* DetailsParallaxViewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F655B171CA706B500E04615 /* Build configuration list for PBXNativeTarget "DetailsParallaxViewUITests" */;
+			buildPhases = (
+				8F655B041CA706B500E04615 /* Sources */,
+				8F655B051CA706B500E04615 /* Frameworks */,
+				8F655B061CA706B500E04615 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8F655B0A1CA706B500E04615 /* PBXTargetDependency */,
+			);
+			name = DetailsParallaxViewUITests;
+			productName = DetailsParallaxViewUITests;
+			productReference = 8F655B081CA706B500E04615 /* DetailsParallaxViewUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8F655AE11CA706B400E04615 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Pierre;
+				TargetAttributes = {
+					8F655AE81CA706B400E04615 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = TDA3Z7TUEK;
+					};
+					8F655AFC1CA706B500E04615 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = TDA3Z7TUEK;
+						TestTargetID = 8F655AE81CA706B400E04615;
+					};
+					8F655B071CA706B500E04615 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = TDA3Z7TUEK;
+						TestTargetID = 8F655AE81CA706B400E04615;
+					};
+				};
+			};
+			buildConfigurationList = 8F655AE41CA706B400E04615 /* Build configuration list for PBXProject "DetailsParallaxView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8F655AE01CA706B400E04615;
+			productRefGroup = 8F655AEA1CA706B400E04615 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8F655AE81CA706B400E04615 /* DetailsParallaxView */,
+				8F655AFC1CA706B500E04615 /* DetailsParallaxViewTests */,
+				8F655B071CA706B500E04615 /* DetailsParallaxViewUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8F655AE71CA706B400E04615 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F655B441CA979DC00E04615 /* KICamera.png in Resources */,
+				8F655B3D1CA970D700E04615 /* ImageTableViewCell.xib in Resources */,
+				8F655B351CA879B600E04615 /* RatingTableViewCell.xib in Resources */,
+				8F655B251CA7D61C00E04615 /* ConseilsTableViewCell.xib in Resources */,
+				8F655B4A1CA984A500E04615 /* MoreImagesTableViewCell.xib in Resources */,
+				8F655AF71CA706B500E04615 /* LaunchScreen.storyboard in Resources */,
+				8F655B391CA95F6F00E04615 /* Main.storyboard in Resources */,
+				8F655B2D1CA862B800E04615 /* MoreTableViewCell.xib in Resources */,
+				8F655B291CA8616500E04615 /* DescriptionTableViewCell.xib in Resources */,
+				8F655AF41CA706B500E04615 /* Assets.xcassets in Resources */,
+				8F655B211CA7079000E04615 /* InfoDetailsTableViewCell.xib in Resources */,
+				8F655B451CA979DC00E04615 /* KICamera@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F655AFB1CA706B500E04615 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F655B061CA706B500E04615 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8F655AE51CA706B400E04615 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F655B1C1CA7073D00E04615 /* ParallaxDetailsTableViewController.swift in Sources */,
+				8F655B281CA8616500E04615 /* DescriptionTableViewCell.swift in Sources */,
+				8F655B491CA984A500E04615 /* MoreImagesTableViewCell.swift in Sources */,
+				8F655B241CA7D61C00E04615 /* ConseilsTableViewCell.swift in Sources */,
+				8F655B3C1CA970D700E04615 /* ImageTableViewCell.swift in Sources */,
+				8F655B321CA8697C00E04615 /* RatingTableViewCell.swift in Sources */,
+				8F655B461CA979DC00E04615 /* KIImagePager.m in Sources */,
+				8F655B371CA87FDC00E04615 /* ParallaxDetailsViewProtocol.swift in Sources */,
+				8F655B201CA7079000E04615 /* InfoDetailsTableViewCell.swift in Sources */,
+				8F655B2C1CA862B800E04615 /* MoreTableViewCell.swift in Sources */,
+				8F655AED1CA706B500E04615 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F655AF91CA706B500E04615 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F655B021CA706B500E04615 /* DetailsParallaxViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F655B041CA706B500E04615 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F655B0D1CA706B500E04615 /* DetailsParallaxViewUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8F655AFF1CA706B500E04615 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F655AE81CA706B400E04615 /* DetailsParallaxView */;
+			targetProxy = 8F655AFE1CA706B500E04615 /* PBXContainerItemProxy */;
+		};
+		8F655B0A1CA706B500E04615 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F655AE81CA706B400E04615 /* DetailsParallaxView */;
+			targetProxy = 8F655B091CA706B500E04615 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8F655AF51CA706B500E04615 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F655AF61CA706B500E04615 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8F655B0F1CA706B500E04615 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8F655B101CA706B500E04615 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8F655B121CA706B500E04615 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = DetailsParallaxView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PB.DetailsParallaxView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DetailsParallaxView/DetailsParallaxView-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8F655B131CA706B500E04615 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = DetailsParallaxView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PB.DetailsParallaxView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DetailsParallaxView/DetailsParallaxView-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		8F655B151CA706B500E04615 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DetailsParallaxViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PB.DetailsParallaxViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DetailsParallaxView.app/DetailsParallaxView";
+			};
+			name = Debug;
+		};
+		8F655B161CA706B500E04615 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DetailsParallaxViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PB.DetailsParallaxViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DetailsParallaxView.app/DetailsParallaxView";
+			};
+			name = Release;
+		};
+		8F655B181CA706B500E04615 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DetailsParallaxViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PB.DetailsParallaxViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DetailsParallaxView;
+			};
+			name = Debug;
+		};
+		8F655B191CA706B500E04615 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DetailsParallaxViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PB.DetailsParallaxViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DetailsParallaxView;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8F655AE41CA706B400E04615 /* Build configuration list for PBXProject "DetailsParallaxView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F655B0F1CA706B500E04615 /* Debug */,
+				8F655B101CA706B500E04615 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F655B111CA706B500E04615 /* Build configuration list for PBXNativeTarget "DetailsParallaxView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F655B121CA706B500E04615 /* Debug */,
+				8F655B131CA706B500E04615 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8F655B141CA706B500E04615 /* Build configuration list for PBXNativeTarget "DetailsParallaxViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F655B151CA706B500E04615 /* Debug */,
+				8F655B161CA706B500E04615 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8F655B171CA706B500E04615 /* Build configuration list for PBXNativeTarget "DetailsParallaxViewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F655B181CA706B500E04615 /* Debug */,
+				8F655B191CA706B500E04615 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8F655AE11CA706B400E04615 /* Project object */;
+}
