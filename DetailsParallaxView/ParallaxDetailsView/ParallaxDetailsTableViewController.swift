@@ -8,10 +8,14 @@
 
 import UIKit
 
-class ParallaxDetailsTableViewController: UITableViewController, ParallaxDetailsViewDelegate {
+class ParallaxDetailsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ParallaxDetailsViewDelegate, KMScrollingHeaderViewDelegate {
+    
+    @IBOutlet var scrollingHeaderView: KMScrollingHeaderView!
+    @IBOutlet weak var navBar: UIView!
+    @IBOutlet weak var navBarTitleLabel: UILabel!
     
     let buttonBack = UIButton(type: .Custom)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +25,7 @@ class ParallaxDetailsTableViewController: UITableViewController, ParallaxDetails
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        self.tableView.separatorStyle = .None
+        /*self.scrollingHeaderView.tableView.separatorStyle = .None
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 26.0/255.0, green: 166.0/255.0, blue: 131.0/255.0, alpha: 1)
         self.title = "Burger"
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
@@ -43,6 +47,13 @@ class ParallaxDetailsTableViewController: UITableViewController, ParallaxDetails
         self.navigationItem.leftBarButtonItem = leftBarButton
         
         self.navigationController?.navigationBarHidden = true
+        //self.scrollingHeaderView.navigationBarView.alpha = 0
+        
+        self.scrollingHeaderView.delegate = self*/
+        
+        self.setupNavbarButtons()
+        self.setupDetailsPageView()
+        self.navBar.alpha = 0
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,16 +63,41 @@ class ParallaxDetailsTableViewController: UITableViewController, ParallaxDetails
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
+    
+    func setupDetailsPageView() {
+        self.scrollingHeaderView.tableView.dataSource = self
+        self.scrollingHeaderView.tableView.delegate = self
+        self.scrollingHeaderView.delegate = self
+        self.scrollingHeaderView.tableView.separatorColor = UIColor.clearColor()
+        self.scrollingHeaderView.headerImageViewContentMode = .Top
+        
+        self.scrollingHeaderView.reloadScrollingHeader()
+    }
+    
+    func setupNavbarButtons() {
+        let buttonBack = UIButton(type: .Custom)
+        
+        buttonBack.frame = CGRectMake(10, 31, 22, 22)
+        buttonBack.setImage(UIImage(named: "back_icon"), forState: UIControlState.Normal)
+        buttonBack.addTarget(self, action: #selector(ParallaxDetailsTableViewController.backButton), forControlEvents: .TouchUpInside)
+        
+        self.view.addSubview(buttonBack)
+        
+        self.navBarTitleLabel.text = "Burger"
+    }
+    
 
     // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 2
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if section == 0 {
             return 1
@@ -71,14 +107,14 @@ class ParallaxDetailsTableViewController: UITableViewController, ParallaxDetails
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
         var cell = UITableViewCell()
 
         // Configure the cell...
         switch indexPath.section {
         case 0:
-            var imageCell: ImageTableViewCell! = tableView.dequeueReusableCellWithIdentifier("ImageCell") as? ImageTableViewCell
+            /*var imageCell: ImageTableViewCell! = tableView.dequeueReusableCellWithIdentifier("ImageCell") as? ImageTableViewCell
             
             if imageCell == nil {
                 imageCell = ImageTableViewCell.imageCell()
@@ -88,7 +124,7 @@ class ParallaxDetailsTableViewController: UITableViewController, ParallaxDetails
                 imageCell.principalImageView.image = UIImage(data: data)
             }
             
-            cell = imageCell
+            cell = imageCell*/
             
             break
             
@@ -188,12 +224,13 @@ class ParallaxDetailsTableViewController: UITableViewController, ParallaxDetails
         return cell
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         var height: CGFloat = 0.0
         
         switch indexPath.section {
         case 0:
-            return UITableViewAutomaticDimension
+            //return UITableViewAutomaticDimension
+            break
         default:
             switch indexPath.row {
             case 0:
@@ -225,24 +262,41 @@ class ParallaxDetailsTableViewController: UITableViewController, ParallaxDetails
         return height
     }
     
-    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 200
     }
     
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
-        if let imageCell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as? ImageTableViewCell {
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if let imageCell = self.scrollingHeaderView.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as? ImageTableViewCell {
             imageCell.scrollViewDidScroll(scrollView)
         }
         
-        if !isRowVisible() {
+        /*if !isRowVisible() {
             self.navigationController?.navigationBarHidden = false
         } else {
             self.navigationController?.navigationBarHidden = true
+        }*/
+        
+        if !isRowVisible() {
+            UIView.animateWithDuration(0.2, animations: {() -> Void in
+                self.navBar.alpha = 1
+                }, completion: nil)
+        } else {
+            UIView.animateWithDuration(0.2, animations: {() -> Void in
+                self.navBar.alpha = 0
+                }, completion: nil)
         }
         
         var fixedButtonFrame = self.buttonBack.frame
         fixedButtonFrame.origin.y = 31 + scrollView.contentOffset.y
         self.buttonBack.frame = fixedButtonFrame
+    }
+    
+    func detailsPage(scrollingHeaderView: KMScrollingHeaderView!, headerImageView imageView: UIImageView!) {
+        if let url = NSURL(string: "http://www.blog.marche-prive.com/wp-content/uploads/2015/04/food58-burger-two-bleu-bacon.jpg"), data = NSData(contentsOfURL: url) {
+            imageView.image = UIImage(data: data)
+            imageView.contentMode = .ScaleAspectFit
+        }
     }
     
     // MARK: - Delegates ParallaxDetailsViewProtocol
@@ -263,7 +317,10 @@ class ParallaxDetailsTableViewController: UITableViewController, ParallaxDetails
     }
     
     func isRowVisible() -> Bool {
-        let indexes: NSArray = tableView.indexPathsForVisibleRows!
+        guard let indexes = self.scrollingHeaderView.tableView.indexPathsForVisibleRows else {
+            return false
+        }
+        
         for index in indexes {
             if index.row == 0 && index.section == 0 {
                 return true

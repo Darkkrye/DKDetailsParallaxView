@@ -8,17 +8,13 @@
 
 import UIKit
 
-@objc protocol MoreProtocol {
-    
-}
-
 class MoreTableViewCell: UITableViewCell {
     
     @IBOutlet weak var moreButton: UIButton!
     
     @IBAction func moreButtonTapped(sender: UIButton) {
         if let delegate = self.delegate {
-            delegate.theMoreButtonTapped!(self.moreButton)
+            delegate.theMoreButtonTapped(self.moreButton)
         }
     }
     

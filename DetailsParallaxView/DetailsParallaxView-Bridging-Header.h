@@ -3,3 +3,4 @@
 //
 
 #import "KIImagePager.h"
+#import "KMScrollingHeaderView.h"

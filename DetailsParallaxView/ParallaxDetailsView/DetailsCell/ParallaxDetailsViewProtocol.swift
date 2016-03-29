@@ -10,8 +10,9 @@ import Foundation
 import UIKit
 
 @objc protocol ParallaxDetailsViewDelegate {
-    optional func favoriteAuthorButtonTapped(button: UIButton)
-    optional func reserveButtonTapped(button: UIButton)
-    optional func moreButtonTapped(button: UIButton)
-    optional func theMoreButtonTapped(button: UIButton)
+    optional
+    func favoriteAuthorButtonTapped(button: UIButton)
+    func reserveButtonTapped(button: UIButton)
+    func moreButtonTapped(button: UIButton)
+    func theMoreButtonTapped(button: UIButton)
 }

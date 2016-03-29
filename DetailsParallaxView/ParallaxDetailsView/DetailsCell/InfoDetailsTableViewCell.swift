@@ -28,13 +28,13 @@ class InfoDetailsTableViewCell: UITableViewCell {
     
     @IBAction func reserveButtonTapped(sender: UIButton) {
         if let delegate = self.delegate {
-            delegate.reserveButtonTapped!(self.reserveButton)
+            delegate.reserveButtonTapped(self.reserveButton)
         }
     }
     
     @IBAction func moreButtonTapped(sender: UIButton) {
         if let delegate = self.delegate {
-            delegate.moreButtonTapped!(self.moreButton)
+            delegate.moreButtonTapped(self.moreButton)
         }
     }
     

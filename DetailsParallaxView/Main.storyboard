@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="s7x-aR-bNa">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
@@ -33,7 +32,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="ldt-Z9-czm" kind="show" id="699-4A-5kU"/>
+                                            <segue destination="2qA-Kr-0Sq" kind="show" id="dDZ-Ua-gn0"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -51,32 +50,63 @@
             <point key="canvasLocation" x="660" y="533"/>
         </scene>
         <!--Parallax Details Table View Controller-->
-        <scene sceneID="Akp-TQ-kgm">
+        <scene sceneID="San-zc-5Ea">
             <objects>
-                <tableViewController id="ldt-Z9-czm" customClass="ParallaxDetailsTableViewController" customModule="DetailsParallaxView" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="kgF-Si-uQy">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KxB-Hc-RAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="2qA-Kr-0Sq" customClass="ParallaxDetailsTableViewController" customModule="DetailsParallaxView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c9e-8B-ZIp"/>
+                        <viewControllerLayoutGuide type="bottom" id="OvU-aU-dTH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hYY-xd-sHV">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgO-rZ-Sal" customClass="KMScrollingHeaderView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nyQ-xk-aYN">
+                                <rect key="frame" x="0.0" y="39" width="600" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onc-43-Lsu">
+                                        <rect key="frame" x="107" y="13" width="386" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="386" id="HFW-7X-l9Z"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.23529411759999999" green="0.70196078429999997" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="onc-43-Lsu" firstAttribute="centerX" secondItem="nyQ-xk-aYN" secondAttribute="centerX" id="LZ4-21-fxb"/>
+                                    <constraint firstAttribute="bottom" secondItem="onc-43-Lsu" secondAttribute="bottom" constant="-13" id="ZWU-ah-9b9"/>
+                                    <constraint firstItem="onc-43-Lsu" firstAttribute="top" secondItem="nyQ-xk-aYN" secondAttribute="top" constant="13" id="afp-ST-uF9"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PrallaxCell" id="6kZ-zf-GLj">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6kZ-zf-GLj" id="gxj-jS-5XN">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ldt-Z9-czm" id="hA2-VY-bWg"/>
-                            <outlet property="delegate" destination="ldt-Z9-czm" id="iqf-u1-voI"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zUH-eu-hGN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="nyQ-xk-aYN" secondAttribute="trailing" id="1YF-sz-f55"/>
+                            <constraint firstItem="mgO-rZ-Sal" firstAttribute="bottom" secondItem="OvU-aU-dTH" secondAttribute="top" id="336-Kb-W8W"/>
+                            <constraint firstItem="nyQ-xk-aYN" firstAttribute="top" secondItem="c9e-8B-ZIp" secondAttribute="bottom" constant="-25" id="6mj-fF-rNU"/>
+                            <constraint firstItem="mgO-rZ-Sal" firstAttribute="trailing" secondItem="nyQ-xk-aYN" secondAttribute="trailing" id="G7f-ri-RAV"/>
+                            <constraint firstItem="nyQ-xk-aYN" firstAttribute="bottom" secondItem="c9e-8B-ZIp" secondAttribute="bottom" constant="39" id="H0e-xF-fv2"/>
+                            <constraint firstItem="nyQ-xk-aYN" firstAttribute="leading" secondItem="hYY-xd-sHV" secondAttribute="leading" id="J78-5K-OKr"/>
+                            <constraint firstItem="nyQ-xk-aYN" firstAttribute="top" secondItem="mgO-rZ-Sal" secondAttribute="top" constant="39" id="dR4-2S-hl3"/>
+                            <constraint firstItem="mgO-rZ-Sal" firstAttribute="leading" secondItem="nyQ-xk-aYN" secondAttribute="leading" id="jhh-fk-Cfu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navBar" destination="nyQ-xk-aYN" id="Kfe-on-AXt"/>
+                        <outlet property="navBarTitleLabel" destination="onc-43-Lsu" id="n03-Rq-lAy"/>
+                        <outlet property="scrollingHeaderView" destination="mgO-rZ-Sal" id="cux-vI-HFW"/>
+                    </connections>
+                </viewController>
             </objects>
-            <point key="canvasLocation" x="1376" y="533"/>
+            <point key="canvasLocation" x="1352" y="533"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OmJ-4F-36k">

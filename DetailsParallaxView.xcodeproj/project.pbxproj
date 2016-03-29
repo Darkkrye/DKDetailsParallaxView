@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F55B30E1CAB0244007BC1ED /* KMScrollingHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F55B30D1CAB0244007BC1ED /* KMScrollingHeaderView.m */; };
 		8F655AED1CA706B500E04615 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F655AEC1CA706B500E04615 /* AppDelegate.swift */; };
 		8F655AF41CA706B500E04615 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F655AF31CA706B500E04615 /* Assets.xcassets */; };
 		8F655AF71CA706B500E04615 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F655AF51CA706B500E04615 /* LaunchScreen.storyboard */; };
@@ -52,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F55B30C1CAB0244007BC1ED /* KMScrollingHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMScrollingHeaderView.h; sourceTree = "<group>"; };
+		8F55B30D1CAB0244007BC1ED /* KMScrollingHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMScrollingHeaderView.m; sourceTree = "<group>"; };
 		8F655AE91CA706B400E04615 /* DetailsParallaxView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DetailsParallaxView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F655AEC1CA706B500E04615 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F655AF31CA706B500E04615 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,6 +115,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F55B30B1CAAFB91007BC1ED /* KMScrollingHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				8F55B30C1CAB0244007BC1ED /* KMScrollingHeaderView.h */,
+				8F55B30D1CAB0244007BC1ED /* KMScrollingHeaderView.m */,
+			);
+			name = KMScrollingHeaderView;
+			sourceTree = "<group>";
+		};
 		8F655AE01CA706B400E04615 = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +178,7 @@
 		8F655B1A1CA706C500E04615 /* ParallaxDetailsView */ = {
 			isa = PBXGroup;
 			children = (
+				8F55B30B1CAAFB91007BC1ED /* KMScrollingHeaderView */,
 				8F655B3E1CA979A600E04615 /* KIImagePager */,
 				8F655B1D1CA7074600E04615 /* DetailsCell */,
 				8F655B1B1CA7073D00E04615 /* ParallaxDetailsTableViewController.swift */,
@@ -361,6 +374,7 @@
 				8F655B201CA7079000E04615 /* InfoDetailsTableViewCell.swift in Sources */,
 				8F655B2C1CA862B800E04615 /* MoreTableViewCell.swift in Sources */,
 				8F655AED1CA706B500E04615 /* AppDelegate.swift in Sources */,
+				8F55B30E1CAB0244007BC1ED /* KMScrollingHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +602,7 @@
 				8F655B131CA706B500E04615 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F655B141CA706B500E04615 /* Build configuration list for PBXNativeTarget "DetailsParallaxViewTests" */ = {
 			isa = XCConfigurationList;
@@ -596,6 +611,7 @@
 				8F655B161CA706B500E04615 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F655B171CA706B500E04615 /* Build configuration list for PBXNativeTarget "DetailsParallaxViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -604,6 +620,7 @@
 				8F655B191CA706B500E04615 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
