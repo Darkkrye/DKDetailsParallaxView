@@ -333,6 +333,10 @@ class ParallaxDetailsTableViewController: UIViewController, UITableViewDelegate,
     func backButton() {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
+    
+    func imagePager(imagePager: KIImagePager, didSelectImage image: String) {
+        print("Nothing")
+    }
 
     /*
     // Override to support conditional editing of the table view.

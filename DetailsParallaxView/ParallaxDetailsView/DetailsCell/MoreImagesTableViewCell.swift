@@ -13,6 +13,8 @@ class MoreImagesTableViewCell: UITableViewCell, KIImagePagerDelegate, KIImagePag
     @IBOutlet weak var imagePager: KIImagePager!
     
     var images = [String]()
+    
+    var delegate: ParallaxDetailsViewDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,6 +36,23 @@ class MoreImagesTableViewCell: UITableViewCell, KIImagePagerDelegate, KIImagePag
     
     func contentModeForImage(image: UInt, inPager pager: KIImagePager!) -> UIViewContentMode {
         return UIViewContentMode.ScaleToFill
+    }
+    
+    func imagePager(imagePager: KIImagePager!, didSelectImageAtIndex index: UInt) {
+        /*if let url = NSURL(string: self.images[Int(index)]), data = NSData(contentsOfURL: url) {
+            let newImageView = UIImageView(image: UIImage(data: data))
+            newImageView.frame = UIScreen.mainScreen().bounds
+            newImageView.backgroundColor = .blackColor()
+            newImageView.contentMode = .ScaleAspectFit
+            newImageView.userInteractionEnabled = true
+            let tap = UITapGestureRecognizer(target: self, action: "dismissFullscreenImage:")
+            newImageView.addGestureRecognizer(tap)
+            self.view.addSubview(newImageView)
+        }*/
+        
+        if let delegate = self.delegate {
+            delegate.imagePager(imagePager, didSelectImage: self.images[Int(index)])
+        }
     }
     
     internal static func moreImagesCell() -> MoreImagesTableViewCell {

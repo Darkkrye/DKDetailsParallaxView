@@ -15,4 +15,5 @@ import UIKit
     func reserveButtonTapped(button: UIButton)
     func moreButtonTapped(button: UIButton)
     func theMoreButtonTapped(button: UIButton)
+    func imagePager(imagePager: KIImagePager, didSelectImage image: String)
 }
