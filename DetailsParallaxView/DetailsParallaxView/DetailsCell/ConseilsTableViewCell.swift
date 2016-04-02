@@ -10,20 +10,29 @@ import UIKit
 
 class ConseilsTableViewCell: UITableViewCell {
     
+    // MARK: - Private Constants
+    
+    
+    // MARK: - Private Variables
+    
+    
+    // MARK: - IBOutlets
     @IBOutlet weak var conseilsLabel: UILabel!
     
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
+    // MARK: - IBActions
+    
+    
+    // MARK: - "Default" Methods
+    
+    
+    // MARK: - Delegates
+    
+    
+    // MARK: - Personnal Delegates
+    
+    
+    // MARK: - Personnal Methods
     internal static func conseilsCell() -> ConseilsTableViewCell {
         let nibs = NSBundle.mainBundle().loadNibNamed("ConseilsTableViewCell", owner: self, options: nil)
         let cell: ConseilsTableViewCell = nibs[0] as! ConseilsTableViewCell

@@ -10,7 +10,14 @@ import UIKit
 
 class InfoDetailsTableViewCell: UITableViewCell {
     
-    // IBOutlets
+    // MARK: - Private Constants
+    
+    
+    // MARK: - Private Variables
+    var delegate: ParallaxDetailsViewDelegate?
+    
+    
+    // MARK: - IBOutlets
     @IBOutlet weak var authorImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
@@ -18,8 +25,7 @@ class InfoDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var reserveButton: UIButton!
     @IBOutlet weak var moreButton: UIButton!
     
-    
-    // IBActions
+    // MARK: - IBActions
     @IBAction func favoriteAuthorButtonTapped(sender: UIButton) {
         if let delegate = self.delegate {
             delegate.favoriteAuthorButtonTapped!(self.favoriteAuthorButton)
@@ -39,12 +45,9 @@ class InfoDetailsTableViewCell: UITableViewCell {
     }
     
     
-    // Delegate
-    var delegate: ParallaxDetailsViewDelegate?
-
+    // MARK: - "Default" Methods
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         
         self.authorImageView.layer.cornerRadius = self.authorImageView.frame.size.width/2
         self.authorImageView.layer.masksToBounds = true
@@ -56,14 +59,15 @@ class InfoDetailsTableViewCell: UITableViewCell {
         self.favoriteAuthorButton.layer.borderWidth = 1.0
         self.favoriteAuthorButton.layer.cornerRadius = 15.0
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     
+    // MARK: - Delegates
+    
+    
+    // MARK: - Personnal Delegates
+    
+    
+    // MARK: - Personnal Methods
     internal static func infoDetails() -> InfoDetailsTableViewCell {
         let nibs = NSBundle.mainBundle().loadNibNamed("InfoDetailsTableViewCell", owner: self, options: nil)
         let cell: InfoDetailsTableViewCell = nibs[0] as! InfoDetailsTableViewCell

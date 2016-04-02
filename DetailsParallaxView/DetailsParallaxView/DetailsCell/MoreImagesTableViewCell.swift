@@ -10,26 +10,34 @@ import UIKit
 
 class MoreImagesTableViewCell: UITableViewCell, KIImagePagerDelegate, KIImagePagerDataSource {
     
+    // MARK: - Private Constants
+    
+    
+    // MARK: - Private Variables
+    var images = [UIImage]()
+    var delegate: ParallaxDetailsViewDelegate?
+    
+    
+    // MARK: - IBOutlets
     @IBOutlet weak var imagePager: KIImagePager!
     
-    var images = [UIImage]()
     
-    var delegate: ParallaxDetailsViewDelegate?
-
+    // MARK: - IBActions
+    
+    
+    // MARK: - "Default" Methods
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         
         self.imagePager.delegate = self
         self.imagePager.dataSource = self
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
+    
+    // MARK: - Delegates
+    
+    
+    // MARK: - Personnal Delegates
     func arrayWithImages(pager: KIImagePager!) -> [AnyObject]! {
         return self.images
     }
@@ -38,12 +46,14 @@ class MoreImagesTableViewCell: UITableViewCell, KIImagePagerDelegate, KIImagePag
         return UIViewContentMode.ScaleToFill
     }
     
-    func imagePager(imagePager: KIImagePager!, didSelectImageAtIndex index: UInt) {        
+    func imagePager(imagePager: KIImagePager!, didSelectImageAtIndex index: UInt) {
         if let delegate = self.delegate {
             delegate.imagePager(imagePager, didSelectImage: self.images[Int(index)])
         }
     }
     
+    
+    // MARK: - Personnal Methods
     internal static func moreImagesCell() -> MoreImagesTableViewCell {
         let nibs = NSBundle.mainBundle().loadNibNamed("MoreImagesTableViewCell", owner: self, options: nil)
         let cell: MoreImagesTableViewCell = nibs[0] as! MoreImagesTableViewCell

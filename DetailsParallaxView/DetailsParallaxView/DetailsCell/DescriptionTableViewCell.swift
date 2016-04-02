@@ -10,19 +10,29 @@ import UIKit
 
 class DescriptionTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var descriptionLabel: UILabel!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    // MARK: - Private Constants
     
+    
+    // MARK: - Private Variables
+    
+    
+    // MARK: - IBOutlets
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    
+    // MARK: - IBActions
+    
+    
+    // MARK: - "Default" Methods
+    
+    
+    // MARK: - Delegates
+    
+    
+    // MARK: - Personnal Delegates
+    
+    
+    // MARK: - Personnal Methods
     internal static func descriptionCell() -> DescriptionTableViewCell {
         let nibs = NSBundle.mainBundle().loadNibNamed("DescriptionTableViewCell", owner: self, options: nil)
         let cell: DescriptionTableViewCell = nibs[0] as! DescriptionTableViewCell

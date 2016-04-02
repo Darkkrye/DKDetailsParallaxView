@@ -10,31 +10,42 @@ import UIKit
 
 class MoreTableViewCell: UITableViewCell {
     
+    // MARK: - Private Constants
+    
+    
+    // MARK: - Private Variables
+    var delegate: ParallaxDetailsViewDelegate!
+    
+    
+    // MARK: - IBOutlets
     @IBOutlet weak var moreButton: UIButton!
     
+    
+    // MARK: - IBActions
     @IBAction func moreButtonTapped(sender: UIButton) {
         if let delegate = self.delegate {
             delegate.theMoreButtonTapped(self.moreButton)
         }
     }
     
-    var delegate: ParallaxDetailsViewDelegate!
     
+    // MARK: - "Default" Methods
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
         self.moreButton.layer.borderColor = self.moreButton.titleLabel?.textColor.CGColor
         self.moreButton.layer.borderWidth = 1.0
         self.moreButton.layer.cornerRadius = 15.0
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     
+    // MARK: - Delegates
+    
+    
+    // MARK: - Personnal Delegates
+    
+    
+    // MARK: - Personnal Methods
     internal static func moreCell() -> MoreTableViewCell {
         let nibs = NSBundle.mainBundle().loadNibNamed("MoreTableViewCell", owner: self, options: nil)
         let cell: MoreTableViewCell = nibs[0] as! MoreTableViewCell

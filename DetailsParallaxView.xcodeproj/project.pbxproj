@@ -11,6 +11,7 @@
 		8F55B3111CAC38E1007BC1ED /* DetailsParallaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F55B30F1CAC38E1007BC1ED /* DetailsParallaxViewController.swift */; };
 		8F55B3121CAC38E1007BC1ED /* DetailsParallaxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F55B3101CAC38E1007BC1ED /* DetailsParallaxViewController.xib */; };
 		8F55B3151CAC3A76007BC1ED /* InitialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F55B3141CAC3A76007BC1ED /* InitialTableViewController.swift */; };
+		8F55B31D1CB03B83007BC1ED /* RatingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F55B31C1CB03B83007BC1ED /* RatingTableViewCell.xib */; };
 		8F655AED1CA706B500E04615 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F655AEC1CA706B500E04615 /* AppDelegate.swift */; };
 		8F655AF41CA706B500E04615 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F655AF31CA706B500E04615 /* Assets.xcassets */; };
 		8F655AF71CA706B500E04615 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F655AF51CA706B500E04615 /* LaunchScreen.storyboard */; };
@@ -25,7 +26,6 @@
 		8F655B2C1CA862B800E04615 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F655B2A1CA862B800E04615 /* MoreTableViewCell.swift */; };
 		8F655B2D1CA862B800E04615 /* MoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F655B2B1CA862B800E04615 /* MoreTableViewCell.xib */; };
 		8F655B321CA8697C00E04615 /* RatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F655B301CA8697C00E04615 /* RatingTableViewCell.swift */; };
-		8F655B351CA879B600E04615 /* RatingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F655B341CA879B600E04615 /* RatingTableViewCell.xib */; };
 		8F655B371CA87FDC00E04615 /* ParallaxDetailsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F655B361CA87FDC00E04615 /* ParallaxDetailsViewProtocol.swift */; };
 		8F655B391CA95F6F00E04615 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F655B381CA95F6F00E04615 /* Main.storyboard */; };
 		8F655B3C1CA970D700E04615 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F655B3A1CA970D700E04615 /* ImageTableViewCell.swift */; };
@@ -57,9 +57,10 @@
 /* Begin PBXFileReference section */
 		8F55B30C1CAB0244007BC1ED /* KMScrollingHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMScrollingHeaderView.h; sourceTree = "<group>"; };
 		8F55B30D1CAB0244007BC1ED /* KMScrollingHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMScrollingHeaderView.m; sourceTree = "<group>"; };
-		8F55B30F1CAC38E1007BC1ED /* DetailsParallaxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailsParallaxViewController.swift; path = "ParallaxDetailsView/View Controller/DetailsParallaxViewController.swift"; sourceTree = "<group>"; };
-		8F55B3101CAC38E1007BC1ED /* DetailsParallaxViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailsParallaxViewController.xib; path = "ParallaxDetailsView/View Controller/DetailsParallaxViewController.xib"; sourceTree = "<group>"; };
+		8F55B30F1CAC38E1007BC1ED /* DetailsParallaxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsParallaxViewController.swift; sourceTree = "<group>"; };
+		8F55B3101CAC38E1007BC1ED /* DetailsParallaxViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsParallaxViewController.xib; sourceTree = "<group>"; };
 		8F55B3141CAC3A76007BC1ED /* InitialTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTableViewController.swift; sourceTree = "<group>"; };
+		8F55B31C1CB03B83007BC1ED /* RatingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RatingTableViewCell.xib; path = DetailsCell/RatingTableViewCell.xib; sourceTree = "<group>"; };
 		8F655AE91CA706B400E04615 /* DetailsParallaxView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DetailsParallaxView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F655AEC1CA706B500E04615 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F655AF31CA706B500E04615 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,27 +72,26 @@
 		8F655B081CA706B500E04615 /* DetailsParallaxViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DetailsParallaxViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F655B0C1CA706B500E04615 /* DetailsParallaxViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsParallaxViewUITests.swift; sourceTree = "<group>"; };
 		8F655B0E1CA706B500E04615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8F655B1E1CA7079000E04615 /* InfoDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoDetailsTableViewCell.swift; path = ParallaxDetailsView/DetailsCell/InfoDetailsTableViewCell.swift; sourceTree = "<group>"; };
-		8F655B1F1CA7079000E04615 /* InfoDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InfoDetailsTableViewCell.xib; path = ParallaxDetailsView/DetailsCell/InfoDetailsTableViewCell.xib; sourceTree = "<group>"; };
-		8F655B221CA7D61C00E04615 /* ConseilsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConseilsTableViewCell.swift; path = ParallaxDetailsView/DetailsCell/ConseilsTableViewCell.swift; sourceTree = "<group>"; };
-		8F655B231CA7D61C00E04615 /* ConseilsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ConseilsTableViewCell.xib; path = ParallaxDetailsView/DetailsCell/ConseilsTableViewCell.xib; sourceTree = "<group>"; };
-		8F655B261CA8616500E04615 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DescriptionTableViewCell.swift; path = ParallaxDetailsView/DetailsCell/DescriptionTableViewCell.swift; sourceTree = "<group>"; };
-		8F655B271CA8616500E04615 /* DescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DescriptionTableViewCell.xib; path = ParallaxDetailsView/DetailsCell/DescriptionTableViewCell.xib; sourceTree = "<group>"; };
-		8F655B2A1CA862B800E04615 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreTableViewCell.swift; path = ParallaxDetailsView/DetailsCell/MoreTableViewCell.swift; sourceTree = "<group>"; };
-		8F655B2B1CA862B800E04615 /* MoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MoreTableViewCell.xib; path = ParallaxDetailsView/DetailsCell/MoreTableViewCell.xib; sourceTree = "<group>"; };
-		8F655B301CA8697C00E04615 /* RatingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RatingTableViewCell.swift; path = ParallaxDetailsView/DetailsCell/RatingTableViewCell.swift; sourceTree = "<group>"; };
-		8F655B341CA879B600E04615 /* RatingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatingTableViewCell.xib; sourceTree = "<group>"; };
-		8F655B361CA87FDC00E04615 /* ParallaxDetailsViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParallaxDetailsViewProtocol.swift; path = ParallaxDetailsView/DetailsCell/ParallaxDetailsViewProtocol.swift; sourceTree = "<group>"; };
+		8F655B1E1CA7079000E04615 /* InfoDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoDetailsTableViewCell.swift; path = DetailsCell/InfoDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		8F655B1F1CA7079000E04615 /* InfoDetailsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InfoDetailsTableViewCell.xib; path = DetailsCell/InfoDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		8F655B221CA7D61C00E04615 /* ConseilsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConseilsTableViewCell.swift; path = DetailsCell/ConseilsTableViewCell.swift; sourceTree = "<group>"; };
+		8F655B231CA7D61C00E04615 /* ConseilsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ConseilsTableViewCell.xib; path = DetailsCell/ConseilsTableViewCell.xib; sourceTree = "<group>"; };
+		8F655B261CA8616500E04615 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DescriptionTableViewCell.swift; path = DetailsCell/DescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		8F655B271CA8616500E04615 /* DescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DescriptionTableViewCell.xib; path = DetailsCell/DescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		8F655B2A1CA862B800E04615 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreTableViewCell.swift; path = DetailsCell/MoreTableViewCell.swift; sourceTree = "<group>"; };
+		8F655B2B1CA862B800E04615 /* MoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MoreTableViewCell.xib; path = DetailsCell/MoreTableViewCell.xib; sourceTree = "<group>"; };
+		8F655B301CA8697C00E04615 /* RatingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RatingTableViewCell.swift; path = DetailsCell/RatingTableViewCell.swift; sourceTree = "<group>"; };
+		8F655B361CA87FDC00E04615 /* ParallaxDetailsViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParallaxDetailsViewProtocol.swift; path = DetailsCell/ParallaxDetailsViewProtocol.swift; sourceTree = "<group>"; };
 		8F655B381CA95F6F00E04615 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		8F655B3A1CA970D700E04615 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageTableViewCell.swift; path = ParallaxDetailsView/DetailsCell/ImageTableViewCell.swift; sourceTree = "<group>"; };
-		8F655B3B1CA970D700E04615 /* ImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageTableViewCell.xib; path = ParallaxDetailsView/DetailsCell/ImageTableViewCell.xib; sourceTree = "<group>"; };
+		8F655B3A1CA970D700E04615 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageTableViewCell.swift; path = DetailsCell/ImageTableViewCell.swift; sourceTree = "<group>"; };
+		8F655B3B1CA970D700E04615 /* ImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageTableViewCell.xib; path = DetailsCell/ImageTableViewCell.xib; sourceTree = "<group>"; };
 		8F655B3F1CA979DC00E04615 /* DetailsParallaxView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DetailsParallaxView-Bridging-Header.h"; sourceTree = "<group>"; };
-		8F655B401CA979DC00E04615 /* KICamera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KICamera.png; sourceTree = "<group>"; };
-		8F655B411CA979DC00E04615 /* KICamera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KICamera@2x.png"; sourceTree = "<group>"; };
-		8F655B421CA979DC00E04615 /* KIImagePager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIImagePager.h; sourceTree = "<group>"; };
-		8F655B431CA979DC00E04615 /* KIImagePager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIImagePager.m; sourceTree = "<group>"; };
-		8F655B471CA984A500E04615 /* MoreImagesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreImagesTableViewCell.swift; path = ParallaxDetailsView/DetailsCell/MoreImagesTableViewCell.swift; sourceTree = "<group>"; };
-		8F655B481CA984A500E04615 /* MoreImagesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MoreImagesTableViewCell.xib; path = ParallaxDetailsView/DetailsCell/MoreImagesTableViewCell.xib; sourceTree = "<group>"; };
+		8F655B401CA979DC00E04615 /* KICamera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = KICamera.png; path = KIImagePager/KICamera.png; sourceTree = "<group>"; };
+		8F655B411CA979DC00E04615 /* KICamera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "KICamera@2x.png"; path = "KIImagePager/KICamera@2x.png"; sourceTree = "<group>"; };
+		8F655B421CA979DC00E04615 /* KIImagePager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KIImagePager.h; path = KIImagePager/KIImagePager.h; sourceTree = "<group>"; };
+		8F655B431CA979DC00E04615 /* KIImagePager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KIImagePager.m; path = KIImagePager/KIImagePager.m; sourceTree = "<group>"; };
+		8F655B471CA984A500E04615 /* MoreImagesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreImagesTableViewCell.swift; path = DetailsCell/MoreImagesTableViewCell.swift; sourceTree = "<group>"; };
+		8F655B481CA984A500E04615 /* MoreImagesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MoreImagesTableViewCell.xib; path = DetailsCell/MoreImagesTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +126,7 @@
 				8F55B30D1CAB0244007BC1ED /* KMScrollingHeaderView.m */,
 			);
 			name = KMScrollingHeaderView;
+			path = KMSScrollingHeaderView;
 			sourceTree = "<group>";
 		};
 		8F55B3131CAC38E7007BC1ED /* ViewController */ = {
@@ -135,6 +136,7 @@
 				8F55B3101CAC38E1007BC1ED /* DetailsParallaxViewController.xib */,
 			);
 			name = ViewController;
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 		8F655AE01CA706B400E04615 = {
@@ -160,9 +162,10 @@
 		8F655AEB1CA706B500E04615 /* DetailsParallaxView */ = {
 			isa = PBXGroup;
 			children = (
-				8F655B1A1CA706C500E04615 /* ParallaxDetailsView */,
+				8F655B1A1CA706C500E04615 /* DetailsParallaxView */,
 				8F655AEC1CA706B500E04615 /* AppDelegate.swift */,
 				8F55B3141CAC3A76007BC1ED /* InitialTableViewController.swift */,
+				8F655B3F1CA979DC00E04615 /* DetailsParallaxView-Bridging-Header.h */,
 				8F655B381CA95F6F00E04615 /* Main.storyboard */,
 				8F655AF31CA706B500E04615 /* Assets.xcassets */,
 				8F655AF51CA706B500E04615 /* LaunchScreen.storyboard */,
@@ -189,7 +192,7 @@
 			path = DetailsParallaxViewUITests;
 			sourceTree = "<group>";
 		};
-		8F655B1A1CA706C500E04615 /* ParallaxDetailsView */ = {
+		8F655B1A1CA706C500E04615 /* DetailsParallaxView */ = {
 			isa = PBXGroup;
 			children = (
 				8F55B3131CAC38E7007BC1ED /* ViewController */,
@@ -197,7 +200,7 @@
 				8F655B3E1CA979A600E04615 /* KIImagePager */,
 				8F655B1D1CA7074600E04615 /* DetailsCell */,
 			);
-			name = ParallaxDetailsView;
+			path = DetailsParallaxView;
 			sourceTree = "<group>";
 		};
 		8F655B1D1CA7074600E04615 /* DetailsCell */ = {
@@ -213,7 +216,7 @@
 				8F655B221CA7D61C00E04615 /* ConseilsTableViewCell.swift */,
 				8F655B231CA7D61C00E04615 /* ConseilsTableViewCell.xib */,
 				8F655B301CA8697C00E04615 /* RatingTableViewCell.swift */,
-				8F655B341CA879B600E04615 /* RatingTableViewCell.xib */,
+				8F55B31C1CB03B83007BC1ED /* RatingTableViewCell.xib */,
 				8F655B2A1CA862B800E04615 /* MoreTableViewCell.swift */,
 				8F655B2B1CA862B800E04615 /* MoreTableViewCell.xib */,
 				8F655B471CA984A500E04615 /* MoreImagesTableViewCell.swift */,
@@ -229,7 +232,6 @@
 				8F655B411CA979DC00E04615 /* KICamera@2x.png */,
 				8F655B421CA979DC00E04615 /* KIImagePager.h */,
 				8F655B431CA979DC00E04615 /* KIImagePager.m */,
-				8F655B3F1CA979DC00E04615 /* DetailsParallaxView-Bridging-Header.h */,
 			);
 			name = KIImagePager;
 			sourceTree = "<group>";
@@ -343,10 +345,10 @@
 			files = (
 				8F655B441CA979DC00E04615 /* KICamera.png in Resources */,
 				8F655B3D1CA970D700E04615 /* ImageTableViewCell.xib in Resources */,
-				8F655B351CA879B600E04615 /* RatingTableViewCell.xib in Resources */,
 				8F655B251CA7D61C00E04615 /* ConseilsTableViewCell.xib in Resources */,
 				8F55B3121CAC38E1007BC1ED /* DetailsParallaxViewController.xib in Resources */,
 				8F655B4A1CA984A500E04615 /* MoreImagesTableViewCell.xib in Resources */,
+				8F55B31D1CB03B83007BC1ED /* RatingTableViewCell.xib in Resources */,
 				8F655AF71CA706B500E04615 /* LaunchScreen.storyboard in Resources */,
 				8F655B391CA95F6F00E04615 /* Main.storyboard in Resources */,
 				8F655B2D1CA862B800E04615 /* MoreTableViewCell.xib in Resources */,

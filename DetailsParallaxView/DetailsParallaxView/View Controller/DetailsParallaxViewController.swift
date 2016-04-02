@@ -1,5 +1,5 @@
 //
-//  TestViewController.swift
+//  DetailsParallaxViewController
 //  DetailsParallaxView
 //
 //  Created by Pierre on 30/03/2016.
@@ -10,14 +10,13 @@ import UIKit
 
 class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ParallaxDetailsViewDelegate, KMScrollingHeaderViewDelegate {
     
-    @IBOutlet var scrollingHeaderView: KMScrollingHeaderView!
-    @IBOutlet weak var navBar: UIView!
-    @IBOutlet weak var navBarTitleLabel: UILabel!
-    
+    // MARK: - Private Constants
     let buttonBack = UIButton(type: .Custom)
     let blackImageView = UIView()
     let newImageView = UIImageView()
     
+    
+    // MARK: - Private Variables
     var dragging = false
     var oldX: CGFloat = 0.0
     var oldY: CGFloat = 0.0
@@ -34,6 +33,17 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
     var images = [UIImage]()
     var imageUser: UIImage!
     
+    
+    // MARK: - IBOutlets
+    @IBOutlet var scrollingHeaderView: KMScrollingHeaderView!
+    @IBOutlet weak var navBar: UIView!
+    @IBOutlet weak var navBarTitleLabel: UILabel!
+    
+    
+    // MARK: - IBActions
+    
+    
+    // MARK: - "Default" Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,7 +65,6 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -65,30 +74,8 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
         self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
     
-    func setupDetailsPageView() {
-        self.scrollingHeaderView.tableView.dataSource = self
-        self.scrollingHeaderView.tableView.delegate = self
-        self.scrollingHeaderView.delegate = self
-        self.scrollingHeaderView.tableView.separatorColor = UIColor.clearColor()
-        self.scrollingHeaderView.headerImageViewContentMode = .Top
-        
-        self.scrollingHeaderView.reloadScrollingHeader()
-    }
-    
-    func setupNavbarButtons() {
-        let buttonBack = UIButton(type: .Custom)
-        
-        buttonBack.frame = CGRectMake(10, 31, 22, 22)
-        buttonBack.setImage(UIImage(named: "back_icon"), forState: UIControlState.Normal)
-        buttonBack.addTarget(self, action: #selector(DetailsParallaxViewController.backButton), forControlEvents: .TouchUpInside)
-        
-        self.view.addSubview(buttonBack)
-        
-        self.navBarTitleLabel.text = "Burger"
-    }
-    
-    
-    // MARK: - Table view data source
+    // MARK: - Delegates
+    // MARK: Table view data source
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -101,7 +88,6 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
         
-        // Configure the cell...
         switch indexPath.row {
         case 1:
             var infoDetailsCell: InfoDetailsTableViewCell! = tableView.dequeueReusableCellWithIdentifier("InfoDetailsTableViewCell") as? InfoDetailsTableViewCell
@@ -256,72 +242,6 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
         self.buttonBack.frame = fixedButtonFrame
     }
     
-    func detailsPage(scrollingHeaderView: KMScrollingHeaderView!, headerImageView imageView: UIImageView!) {
-        dispatch_async(dispatch_get_main_queue(),{
-            
-            imageView.image = self.images.first
-            imageView.contentMode = .ScaleAspectFit
-            
-        })
-    }
-    
-    // MARK: - Delegates ParallaxDetailsViewProtocol
-    func favoriteAuthorButtonTapped(button: UIButton) {
-        print("Auteur en favoris")
-    }
-    
-    func reserveButtonTapped(button: UIButton) {
-        print("Reservé")
-    }
-    
-    func moreButtonTapped(button: UIButton) {
-        print("Bouton Plus")
-    }
-    
-    func theMoreButtonTapped(button: UIButton) {
-        print("Bouton Voir ses recettes !")
-    }
-    
-    func isRowVisible() -> Bool {
-        guard let indexes = self.scrollingHeaderView.tableView.indexPathsForVisibleRows else {
-            return false
-        }
-        
-        for index in indexes {
-            if index.row == 0 {
-                return true
-            }
-        }
-        
-        return false
-    }
-    
-    func backButton() {
-        self.navigationController?.popToRootViewControllerAnimated(true)
-    }
-    
-    func imagePager(imagePager: KIImagePager, didSelectImage image: UIImage) {
-        self.blackImageView.frame = self.view.frame
-        self.blackImageView.backgroundColor = .blackColor()
-        
-        self.newImageView.image = image
-        self.newImageView.contentMode = .ScaleAspectFit
-        self.newImageView.userInteractionEnabled = true
-        self.newImageView.frame = self.view.frame
-        
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(DetailsParallaxViewController.dismissFullScreenMode(_:)))
-        newImageView.addGestureRecognizer(tap)
-        
-        
-        self.blackImageView.addSubview(self.newImageView)
-        self.view.addSubview(self.blackImageView)
-    }
-    
-    func dismissFullScreenMode(sender: UITapGestureRecognizer) {
-        sender.view?.superview?.removeFromSuperview()
-    }
-    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let touch = event?.allTouches()?.first
         let touchLocation = touch?.locationInView(self.view)
@@ -345,7 +265,7 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
             let imageView = self.blackImageView.subviews.first as! UIImageView
             
             var frame = self.view.frame
-
+            
             self.endX = self.view.frame.origin.x + (touchLocation?.x)! - oldX
             self.endY = self.view.frame.origin.y + (touchLocation?.y)! - oldY
             
@@ -361,8 +281,6 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
         
         let imageView = self.blackImageView.subviews.first as! UIImageView
         
-        print(imageView.center.y)
-        
         if imageView.center.x <= -75 || imageView.center.x >= 450 || imageView.center.y <= 150 || imageView.center.y >= 550 {
             self.blackImageView.subviews.first?.superview?.removeFromSuperview()
         } else {
@@ -371,5 +289,97 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
                 self.blackImageView.subviews.first?.frame = self.view.frame
                 }, completion: { _ in })
         }
+    }
+    
+    
+    // MARK: - Personnal Delegates
+    // MARK: Delegates KMScrollingHeaderViewDelegate
+    func detailsPage(scrollingHeaderView: KMScrollingHeaderView!, headerImageView imageView: UIImageView!) {
+        dispatch_async(dispatch_get_main_queue(),{
+            imageView.image = self.images.first
+            imageView.contentMode = .ScaleAspectFit
+            
+        })
+    }
+    
+    // MARK: Delegates ParallaxDetailsViewProtocol
+    func favoriteAuthorButtonTapped(button: UIButton) {
+        print("Auteur en favoris")
+    }
+    
+    func reserveButtonTapped(button: UIButton) {
+        print("Reservé")
+    }
+    
+    func moreButtonTapped(button: UIButton) {
+        print("Bouton Plus")
+    }
+    
+    func theMoreButtonTapped(button: UIButton) {
+        print("Bouton Voir ses recettes !")
+    }
+    
+    func imagePager(imagePager: KIImagePager, didSelectImage image: UIImage) {
+        self.blackImageView.frame = self.view.frame
+        self.blackImageView.backgroundColor = .blackColor()
+        
+        self.newImageView.image = image
+        self.newImageView.contentMode = .ScaleAspectFit
+        self.newImageView.userInteractionEnabled = true
+        self.newImageView.frame = self.view.frame
+        
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(DetailsParallaxViewController.dismissFullScreenMode(_:)))
+        newImageView.addGestureRecognizer(tap)
+        
+        
+        self.blackImageView.addSubview(self.newImageView)
+        self.view.addSubview(self.blackImageView)
+    }
+    
+    
+    // MARK: - Personnal Methods
+    func setupDetailsPageView() {
+        self.scrollingHeaderView.tableView.dataSource = self
+        self.scrollingHeaderView.tableView.delegate = self
+        self.scrollingHeaderView.delegate = self
+        self.scrollingHeaderView.tableView.separatorColor = UIColor.clearColor()
+        self.scrollingHeaderView.headerImageViewContentMode = .Top
+        
+        self.scrollingHeaderView.reloadScrollingHeader()
+    }
+    
+    func setupNavbarButtons() {
+        let buttonBack = UIButton(type: .Custom)
+        
+        buttonBack.frame = CGRectMake(10, 31, 22, 22)
+        buttonBack.setImage(UIImage(named: "back_icon"), forState: UIControlState.Normal)
+        buttonBack.addTarget(self, action: #selector(DetailsParallaxViewController.backButton), forControlEvents: .TouchUpInside)
+        
+        self.view.addSubview(buttonBack)
+        
+        self.navBarTitleLabel.text = "Burger"
+    }
+    
+    func isRowVisible() -> Bool {
+        guard let indexes = self.scrollingHeaderView.tableView.indexPathsForVisibleRows else {
+            return false
+        }
+        
+        for index in indexes {
+            if index.row == 0 {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    func backButton() {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    func dismissFullScreenMode(sender: UITapGestureRecognizer) {
+        sender.view?.superview?.removeFromSuperview()
     }
 }
