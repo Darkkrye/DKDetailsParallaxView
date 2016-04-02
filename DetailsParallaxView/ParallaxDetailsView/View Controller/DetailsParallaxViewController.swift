@@ -15,7 +15,24 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var navBarTitleLabel: UILabel!
     
     let buttonBack = UIButton(type: .Custom)
+    let blackImageView = UIView()
+    let newImageView = UIImageView()
+    
+    var dragging = false
+    var oldX: CGFloat = 0.0
+    var oldY: CGFloat = 0.0
+    
+    var endX: CGFloat = 0.0
+    var endY: CGFloat = 0.0
+    
     var statusBarHidden = true
+    var imageLocation = CGPoint(x: 0, y: 0)
+    
+    var stringImages = ["http://www.blog.marche-prive.com/wp-content/uploads/2015/04/food58-burger-two-bleu-bacon.jpg",
+                        "http://img1.gtsstatic.com/wallpapers/9b04890a3b057f005949ee85b16fc931_large.jpeg"]
+    
+    var images = [UIImage]()
+    var imageUser: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +41,16 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
         self.setupDetailsPageView()
         self.navBar.alpha = 0
         UIApplication.sharedApplication().statusBarHidden = true
+        
+        for stringImage in stringImages {
+            if let url = NSURL(string: stringImage), data = NSData(contentsOfURL: url) {
+                self.images.append(UIImage(data: data)!)
+            }
+        }
+        
+        if let url = NSURL(string: "https://lh4.googleusercontent.com/-yvDZHxTUzZg/AAAAAAAAAAI/AAAAAAAAAAA/AMW9IgfPYUvVK7Q5sjWLob8pxqXyeJMTMQ/s96-c-mo/photo.jpg"), data = NSData(contentsOfURL: url) {
+            self.imageUser = UIImage(data: data)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,7 +80,7 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
         
         buttonBack.frame = CGRectMake(10, 31, 22, 22)
         buttonBack.setImage(UIImage(named: "back_icon"), forState: UIControlState.Normal)
-        buttonBack.addTarget(self, action: #selector(ParallaxDetailsTableViewController.backButton), forControlEvents: .TouchUpInside)
+        buttonBack.addTarget(self, action: #selector(DetailsParallaxViewController.backButton), forControlEvents: .TouchUpInside)
         
         self.view.addSubview(buttonBack)
         
@@ -63,18 +90,15 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
     
     // MARK: - Table view data source
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 7
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
         var cell = UITableViewCell()
         
         // Configure the cell...
@@ -86,9 +110,7 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
                 infoDetailsCell = InfoDetailsTableViewCell.infoDetails()
             }
             
-            if let url = NSURL(string: "https://lh4.googleusercontent.com/-yvDZHxTUzZg/AAAAAAAAAAI/AAAAAAAAAAA/AMW9IgfPYUvVK7Q5sjWLob8pxqXyeJMTMQ/s96-c-mo/photo.jpg"), data = NSData(contentsOfURL: url) {
-                infoDetailsCell.authorImageView.image = UIImage(data: data)
-            }
+            infoDetailsCell.authorImageView.image = self.imageUser
             infoDetailsCell.titleLabel.text = "Re Test"
             infoDetailsCell.authorLabel.text = "Re Test2"
             
@@ -156,8 +178,7 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
                 moreImagesCell = MoreImagesTableViewCell.moreImagesCell()
             }
             
-            moreImagesCell.images = ["http://www.blog.marche-prive.com/wp-content/uploads/2015/04/food58-burger-two-bleu-bacon.jpg",
-                                     "http://img1.gtsstatic.com/wallpapers/9b04890a3b057f005949ee85b16fc931_large.jpeg"]
+            moreImagesCell.images = self.images
             moreImagesCell.imagePager.reloadData()
             
             moreImagesCell.delegate = self
@@ -236,10 +257,12 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func detailsPage(scrollingHeaderView: KMScrollingHeaderView!, headerImageView imageView: UIImageView!) {
-        if let url = NSURL(string: "http://www.blog.marche-prive.com/wp-content/uploads/2015/04/food58-burger-two-bleu-bacon.jpg"), data = NSData(contentsOfURL: url) {
-            imageView.image = UIImage(data: data)
+        dispatch_async(dispatch_get_main_queue(),{
+            
+            imageView.image = self.images.first
             imageView.contentMode = .ScaleAspectFit
-        }
+            
+        })
     }
     
     // MARK: - Delegates ParallaxDetailsViewProtocol
@@ -268,12 +291,6 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
             if index.row == 0 {
                 return true
             }
-            
-            /*print(self.scrollingHeaderView.tableView.rectForRowAtIndexPath(index).origin.y)
-            
-            if self.scrollingHeaderView.tableView.rectForRowAtIndexPath(index).origin.y <= 280 {
-                return true
-            }*/
         }
         
         return false
@@ -283,20 +300,76 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
-    func imagePager(imagePager: KIImagePager, didSelectImage image: String) {
-        if let url = NSURL(string: image), data = NSData(contentsOfURL: url) {
-            let newImageView = UIImageView(image: UIImage(data: data))
-            newImageView.frame = self.view.frame
-            newImageView.backgroundColor = .blackColor()
-            newImageView.contentMode = .ScaleAspectFit
-            newImageView.userInteractionEnabled = true
-            let tap = UITapGestureRecognizer(target: self, action: #selector(DetailsParallaxViewController.dismissFullscreenImage(_:)))
-            newImageView.addGestureRecognizer(tap)
-            self.view.addSubview(newImageView)
+    func imagePager(imagePager: KIImagePager, didSelectImage image: UIImage) {
+        self.blackImageView.frame = self.view.frame
+        self.blackImageView.backgroundColor = .blackColor()
+        
+        self.newImageView.image = image
+        self.newImageView.contentMode = .ScaleAspectFit
+        self.newImageView.userInteractionEnabled = true
+        self.newImageView.frame = self.view.frame
+        
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(DetailsParallaxViewController.dismissFullScreenMode(_:)))
+        newImageView.addGestureRecognizer(tap)
+        
+        
+        self.blackImageView.addSubview(self.newImageView)
+        self.view.addSubview(self.blackImageView)
+    }
+    
+    func dismissFullScreenMode(sender: UITapGestureRecognizer) {
+        sender.view?.superview?.removeFromSuperview()
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let touch = event?.allTouches()?.first
+        let touchLocation = touch?.locationInView(self.view)
+        
+        if CGRectContainsPoint(self.view.frame, touchLocation!) {
+            self.dragging = true
+            self.oldX = (touchLocation?.x)!
+            self.oldY = (touchLocation?.y)!
         }
     }
     
-    func dismissFullscreenImage(sender: UITapGestureRecognizer) {
-        sender.view?.removeFromSuperview()
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        UIView.animateWithDuration(0.25, delay: 0.0, options: ([.BeginFromCurrentState, .CurveEaseInOut]), animations: {() -> Void in
+            self.blackImageView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+            }, completion: { _ in })
+        
+        let touch = event?.allTouches()?.first
+        let touchLocation = touch?.locationInView(self.view)
+        
+        if dragging {
+            let imageView = self.blackImageView.subviews.first as! UIImageView
+            
+            var frame = self.view.frame
+
+            self.endX = self.view.frame.origin.x + (touchLocation?.x)! - oldX
+            self.endY = self.view.frame.origin.y + (touchLocation?.y)! - oldY
+            
+            frame.origin.x = self.endX
+            frame.origin.y = self.endY
+            
+            imageView.frame = frame
+        }
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.dragging = false
+        
+        let imageView = self.blackImageView.subviews.first as! UIImageView
+        
+        print(imageView.center.y)
+        
+        if imageView.center.x <= -75 || imageView.center.x >= 450 || imageView.center.y <= 150 || imageView.center.y >= 550 {
+            self.blackImageView.subviews.first?.superview?.removeFromSuperview()
+        } else {
+            UIView.animateWithDuration(0.25, delay: 0.0, options: ([.BeginFromCurrentState, .CurveEaseInOut]), animations: {() -> Void in
+                self.blackImageView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+                self.blackImageView.subviews.first?.frame = self.view.frame
+                }, completion: { _ in })
+        }
     }
 }

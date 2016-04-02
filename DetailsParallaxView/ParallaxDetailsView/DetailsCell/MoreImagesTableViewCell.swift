@@ -12,7 +12,7 @@ class MoreImagesTableViewCell: UITableViewCell, KIImagePagerDelegate, KIImagePag
     
     @IBOutlet weak var imagePager: KIImagePager!
     
-    var images = [String]()
+    var images = [UIImage]()
     
     var delegate: ParallaxDetailsViewDelegate?
 
@@ -38,18 +38,7 @@ class MoreImagesTableViewCell: UITableViewCell, KIImagePagerDelegate, KIImagePag
         return UIViewContentMode.ScaleToFill
     }
     
-    func imagePager(imagePager: KIImagePager!, didSelectImageAtIndex index: UInt) {
-        /*if let url = NSURL(string: self.images[Int(index)]), data = NSData(contentsOfURL: url) {
-            let newImageView = UIImageView(image: UIImage(data: data))
-            newImageView.frame = UIScreen.mainScreen().bounds
-            newImageView.backgroundColor = .blackColor()
-            newImageView.contentMode = .ScaleAspectFit
-            newImageView.userInteractionEnabled = true
-            let tap = UITapGestureRecognizer(target: self, action: "dismissFullscreenImage:")
-            newImageView.addGestureRecognizer(tap)
-            self.view.addSubview(newImageView)
-        }*/
-        
+    func imagePager(imagePager: KIImagePager!, didSelectImageAtIndex index: UInt) {        
         if let delegate = self.delegate {
             delegate.imagePager(imagePager, didSelectImage: self.images[Int(index)])
         }
