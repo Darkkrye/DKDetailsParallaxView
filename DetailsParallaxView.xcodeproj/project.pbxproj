@@ -35,6 +35,10 @@
 		8F655B461CA979DC00E04615 /* KIImagePager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F655B431CA979DC00E04615 /* KIImagePager.m */; };
 		8F655B491CA984A500E04615 /* MoreImagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F655B471CA984A500E04615 /* MoreImagesTableViewCell.swift */; };
 		8F655B4A1CA984A500E04615 /* MoreImagesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F655B481CA984A500E04615 /* MoreImagesTableViewCell.xib */; };
+		8F8799801CB5866E007E477A /* PickerViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F87997E1CB5866E007E477A /* PickerViewTableViewCell.swift */; };
+		8F8799811CB5866E007E477A /* PickerViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F87997F1CB5866E007E477A /* PickerViewTableViewCell.xib */; };
+		8FB65C2B1CB7E48B00010511 /* UIPickerViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB65C291CB7E48B00010511 /* UIPickerViewTableViewCell.swift */; };
+		8FB65C2C1CB7E48B00010511 /* UIPickerViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FB65C2A1CB7E48B00010511 /* UIPickerViewTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +96,10 @@
 		8F655B431CA979DC00E04615 /* KIImagePager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KIImagePager.m; path = KIImagePager/KIImagePager.m; sourceTree = "<group>"; };
 		8F655B471CA984A500E04615 /* MoreImagesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreImagesTableViewCell.swift; path = DetailsCell/MoreImagesTableViewCell.swift; sourceTree = "<group>"; };
 		8F655B481CA984A500E04615 /* MoreImagesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MoreImagesTableViewCell.xib; path = DetailsCell/MoreImagesTableViewCell.xib; sourceTree = "<group>"; };
+		8F87997E1CB5866E007E477A /* PickerViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickerViewTableViewCell.swift; path = DetailsCell/PickerViewTableViewCell.swift; sourceTree = "<group>"; };
+		8F87997F1CB5866E007E477A /* PickerViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PickerViewTableViewCell.xib; path = DetailsCell/PickerViewTableViewCell.xib; sourceTree = "<group>"; };
+		8FB65C291CB7E48B00010511 /* UIPickerViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPickerViewTableViewCell.swift; sourceTree = "<group>"; };
+		8FB65C2A1CB7E48B00010511 /* UIPickerViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIPickerViewTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +229,10 @@
 				8F655B2B1CA862B800E04615 /* MoreTableViewCell.xib */,
 				8F655B471CA984A500E04615 /* MoreImagesTableViewCell.swift */,
 				8F655B481CA984A500E04615 /* MoreImagesTableViewCell.xib */,
+				8F87997E1CB5866E007E477A /* PickerViewTableViewCell.swift */,
+				8F87997F1CB5866E007E477A /* PickerViewTableViewCell.xib */,
+				8FB65C291CB7E48B00010511 /* UIPickerViewTableViewCell.swift */,
+				8FB65C2A1CB7E48B00010511 /* UIPickerViewTableViewCell.xib */,
 			);
 			name = DetailsCell;
 			sourceTree = "<group>";
@@ -344,9 +356,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F655B441CA979DC00E04615 /* KICamera.png in Resources */,
+				8F8799811CB5866E007E477A /* PickerViewTableViewCell.xib in Resources */,
 				8F655B3D1CA970D700E04615 /* ImageTableViewCell.xib in Resources */,
 				8F655B251CA7D61C00E04615 /* ConseilsTableViewCell.xib in Resources */,
 				8F55B3121CAC38E1007BC1ED /* DetailsParallaxViewController.xib in Resources */,
+				8FB65C2C1CB7E48B00010511 /* UIPickerViewTableViewCell.xib in Resources */,
 				8F655B4A1CA984A500E04615 /* MoreImagesTableViewCell.xib in Resources */,
 				8F55B31D1CB03B83007BC1ED /* RatingTableViewCell.xib in Resources */,
 				8F655AF71CA706B500E04615 /* LaunchScreen.storyboard in Resources */,
@@ -390,8 +404,10 @@
 				8F655B371CA87FDC00E04615 /* ParallaxDetailsViewProtocol.swift in Sources */,
 				8F655B201CA7079000E04615 /* InfoDetailsTableViewCell.swift in Sources */,
 				8F655B2C1CA862B800E04615 /* MoreTableViewCell.swift in Sources */,
+				8FB65C2B1CB7E48B00010511 /* UIPickerViewTableViewCell.swift in Sources */,
 				8F655AED1CA706B500E04615 /* AppDelegate.swift in Sources */,
 				8F55B3151CAC3A76007BC1ED /* InitialTableViewController.swift in Sources */,
+				8F8799801CB5866E007E477A /* PickerViewTableViewCell.swift in Sources */,
 				8F55B30E1CAB0244007BC1ED /* KMScrollingHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,6 +546,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				HEADER_SEARCH_PATHS = "$(PROJECT_NAME)/**";
 				INFOPLIST_FILE = DetailsParallaxView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -546,6 +563,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				HEADER_SEARCH_PATHS = "$(PROJECT_NAME)/**";
 				INFOPLIST_FILE = DetailsParallaxView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

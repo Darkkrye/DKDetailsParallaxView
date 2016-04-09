@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ParallaxDetailsViewDelegate, KMScrollingHeaderViewDelegate {
+class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ParallaxDetailsViewDelegate, KMScrollingHeaderViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     // MARK: - Private Constants
     let buttonBack = UIButton(type: .Custom)
@@ -32,6 +32,10 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
     
     var images = [UIImage]()
     var imageUser: UIImage!
+    
+    var typePickerShouldOpen = false
+    
+    let array = ["Lorem", "Ipsum", "Dolor", "Sit", "Amet"]
     
     
     // MARK: - IBOutlets
@@ -81,7 +85,7 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 8
     }
     
     
@@ -107,6 +111,20 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
             break
             
         case 2:
+            var uiPickerViewCell: UIPickerViewTableViewCell! = tableView.dequeueReusableCellWithIdentifier("UIPickerViewTableViewCell") as? UIPickerViewTableViewCell
+            
+            if uiPickerViewCell == nil {
+                uiPickerViewCell = UIPickerViewTableViewCell.uiPickerViewCell()
+            }
+            
+            uiPickerViewCell.compensationPickerView.delegate = self
+            uiPickerViewCell.compensationPickerView.dataSource = self
+            
+            cell = uiPickerViewCell
+            
+            break
+            
+        case 3:
             var descriptionCell: DescriptionTableViewCell! = tableView.dequeueReusableCellWithIdentifier("DescriptionTableViewCell") as? DescriptionTableViewCell
             
             if descriptionCell == nil {
@@ -118,7 +136,7 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
             
             break
             
-        case 3:
+        case 4:
             var conseilsCell: ConseilsTableViewCell! = tableView.dequeueReusableCellWithIdentifier("ConseilsTableViewCell") as? ConseilsTableViewCell
             
             if conseilsCell == nil {
@@ -130,7 +148,7 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
             
             break
             
-        case 4:
+        case 5:
             var ratingCell: RatingTableViewCell! = tableView.dequeueReusableCellWithIdentifier("RatingTableViewCell") as? RatingTableViewCell
             
             if ratingCell == nil {
@@ -145,7 +163,7 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
             
             break
             
-        case 5:
+        case 6:
             var moreCell: MoreTableViewCell! = tableView.dequeueReusableCellWithIdentifier("MoreTableViewCell") as? MoreTableViewCell
             
             if moreCell == nil {
@@ -157,7 +175,7 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
             
             break
             
-        case 6:
+        case 7:
             var moreImagesCell: MoreImagesTableViewCell! = tableView.dequeueReusableCellWithIdentifier("MoreImagesTableViewCell") as? MoreImagesTableViewCell
             
             if moreImagesCell == nil {
@@ -180,6 +198,42 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 && indexPath.row == 2 {
+            
+            self.typePickerShouldOpen = !typePickerShouldOpen
+            
+            self.scrollingHeaderView.tableView.beginUpdates()
+            
+            let beforeCell = self.scrollingHeaderView.tableView.cellForRowAtIndexPath(indexPath)
+            let cell = self.scrollingHeaderView.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: indexPath.row + 1, inSection: indexPath.section)) as! UIPickerViewTableViewCell
+            
+            if self.typePickerShouldOpen {
+                cell.hidden = false
+                
+                beforeCell!.layer.shadowColor = UIColor.blackColor().CGColor
+                beforeCell!.layer.shadowOpacity = 0.5
+                beforeCell!.layer.shadowOffset = CGSizeMake(0, 5)
+                
+                cell.layer.shadowColor = UIColor.blackColor().CGColor
+                cell.layer.shadowOpacity = 0.5
+                cell.layer.shadowOffset = CGSizeMake(0, 5)
+            } else {
+                cell.hidden = true
+                
+                beforeCell!.layer.shadowColor = UIColor.clearColor().CGColor
+                beforeCell!.layer.shadowOpacity = 0
+                beforeCell!.layer.shadowOffset = CGSizeMake(0, 0)
+                
+                cell.layer.shadowColor = UIColor.clearColor().CGColor
+                cell.layer.shadowOpacity = 0
+                cell.layer.shadowOffset = CGSizeMake(0, 0)
+            }
+            
+            self.scrollingHeaderView.tableView.endUpdates()
+        }
+    }
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         var height: CGFloat = 0.0
         
@@ -192,19 +246,23 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
             height = 104
             break
             
-        case 2,3:
+        case 2:
+            height = 99
+            break
+            
+        case 3,4:
             height = 250
             break
             
-        case 4:
+        case 5:
             height = 60
             break
             
-        case 5:
+        case 6:
             height = 62
             break
             
-        case 6:
+        case 7:
             height = 250
             break
             
@@ -289,6 +347,23 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
                 self.blackImageView.subviews.first?.frame = self.view.frame
                 }, completion: { _ in })
         }
+    }
+    
+    // MARK: Delegates UIPickerViewDelegate & UIPickerViewDataSource
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print(self.array[row])
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.array[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.array.count
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
     }
     
     
