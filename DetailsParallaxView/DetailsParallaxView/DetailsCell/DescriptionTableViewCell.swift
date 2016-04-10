@@ -18,6 +18,7 @@ class DescriptionTableViewCell: UITableViewCell {
     
     // MARK: - IBOutlets
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
     
     
     // MARK: - IBActions

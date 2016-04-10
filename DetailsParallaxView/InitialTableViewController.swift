@@ -26,8 +26,18 @@ class InitialTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let myVC1 = DetailsParallaxViewController(nibName:  "DetailsParallaxViewController", bundle: nil)
-        self.navigationController?.pushViewController(myVC1, animated: true)
+        switch indexPath.row {
+        case 0:
+            let myVC = DetailsParallaxViewController(nibName:  "DetailsParallaxViewController", bundle: nil)
+            self.navigationController?.pushViewController(myVC, animated: true)
+            
+        case 1:
+            let myVC = SecondDetailsParallaxViewController(nibName:  "SecondDetailsParallaxViewController", bundle: nil)
+            self.navigationController?.pushViewController(myVC, animated: true)
+            
+        default:
+            break
+        }
     }
 
     // MARK: - Table view data source
