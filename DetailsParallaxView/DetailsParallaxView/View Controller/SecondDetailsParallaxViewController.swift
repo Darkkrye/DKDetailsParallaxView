@@ -204,39 +204,6 @@ class SecondDetailsParallaxViewController: UIViewController, UITableViewDelegate
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 0 && indexPath.row == 2 {
-            
-            self.typePickerShouldOpen = !typePickerShouldOpen
-            
-            self.scrollingHeaderView.tableView.beginUpdates()
-            
-            let beforeCell = self.scrollingHeaderView.tableView.cellForRowAtIndexPath(indexPath)
-            let cell = self.scrollingHeaderView.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: indexPath.row + 1, inSection: indexPath.section)) as! UIPickerViewTableViewCell
-            
-            if self.typePickerShouldOpen {
-                cell.hidden = false
-                
-                beforeCell!.layer.shadowColor = UIColor.blackColor().CGColor
-                beforeCell!.layer.shadowOpacity = 0.5
-                beforeCell!.layer.shadowOffset = CGSizeMake(0, 5)
-                
-                cell.layer.shadowColor = UIColor.blackColor().CGColor
-                cell.layer.shadowOpacity = 0.5
-                cell.layer.shadowOffset = CGSizeMake(0, 5)
-            } else {
-                cell.hidden = true
-                
-                beforeCell!.layer.shadowColor = UIColor.clearColor().CGColor
-                beforeCell!.layer.shadowOpacity = 0
-                beforeCell!.layer.shadowOffset = CGSizeMake(0, 0)
-                
-                cell.layer.shadowColor = UIColor.clearColor().CGColor
-                cell.layer.shadowOpacity = 0
-                cell.layer.shadowOffset = CGSizeMake(0, 0)
-            }
-            
-            self.scrollingHeaderView.tableView.endUpdates()
-        }
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -406,6 +373,10 @@ class SecondDetailsParallaxViewController: UIViewController, UITableViewDelegate
         
         self.blackImageView.addSubview(self.newImageView)
         self.view.addSubview(self.blackImageView)
+    }
+    
+    func pickerViewUpdateLabel(button: UIButton, text: String) {
+        
     }
     
     

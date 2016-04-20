@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F40009A1CC69FD400031175 /* UIPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F4000991CC69FD400031175 /* UIPickerViewController.xib */; };
+		8F40009C1CC6A0B900031175 /* UIPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F40009B1CC6A0B900031175 /* UIPickerViewController.swift */; };
 		8F55B30E1CAB0244007BC1ED /* KMScrollingHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F55B30D1CAB0244007BC1ED /* KMScrollingHeaderView.m */; };
 		8F55B3111CAC38E1007BC1ED /* DetailsParallaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F55B30F1CAC38E1007BC1ED /* DetailsParallaxViewController.swift */; };
 		8F55B3121CAC38E1007BC1ED /* DetailsParallaxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F55B3101CAC38E1007BC1ED /* DetailsParallaxViewController.xib */; };
@@ -41,8 +43,6 @@
 		8F8A37201CBAB03300A1B8F5 /* SecondDetailsParallaxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F8A371F1CBAB03300A1B8F5 /* SecondDetailsParallaxViewController.xib */; };
 		8F8A372C1CBAB2A200A1B8F5 /* RatingServingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A37281CBAB2A200A1B8F5 /* RatingServingTableViewCell.swift */; };
 		8F8A372D1CBAB2A200A1B8F5 /* RatingServingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F8A37291CBAB2A200A1B8F5 /* RatingServingTableViewCell.xib */; };
-		8F8A372E1CBAB2A200A1B8F5 /* UIPickerViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A372A1CBAB2A200A1B8F5 /* UIPickerViewTableViewCell.swift */; };
-		8F8A372F1CBAB2A200A1B8F5 /* UIPickerViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F8A372B1CBAB2A200A1B8F5 /* UIPickerViewTableViewCell.xib */; };
 		8F8A37321CBAB9C500A1B8F5 /* PreparingBakingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A37301CBAB9C500A1B8F5 /* PreparingBakingTableViewCell.swift */; };
 		8F8A37331CBAB9C500A1B8F5 /* PreparingBakingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F8A37311CBAB9C500A1B8F5 /* PreparingBakingTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -65,6 +65,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F4000991CC69FD400031175 /* UIPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UIPickerViewController.xib; path = DetailsCell/UIPickerViewController.xib; sourceTree = "<group>"; };
+		8F40009B1CC6A0B900031175 /* UIPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIPickerViewController.swift; path = DetailsCell/UIPickerViewController.swift; sourceTree = "<group>"; };
 		8F55B30C1CAB0244007BC1ED /* KMScrollingHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMScrollingHeaderView.h; sourceTree = "<group>"; };
 		8F55B30D1CAB0244007BC1ED /* KMScrollingHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMScrollingHeaderView.m; sourceTree = "<group>"; };
 		8F55B30F1CAC38E1007BC1ED /* DetailsParallaxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsParallaxViewController.swift; sourceTree = "<group>"; };
@@ -108,8 +110,6 @@
 		8F8A371F1CBAB03300A1B8F5 /* SecondDetailsParallaxViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondDetailsParallaxViewController.xib; sourceTree = "<group>"; };
 		8F8A37281CBAB2A200A1B8F5 /* RatingServingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RatingServingTableViewCell.swift; path = DetailsCell/RatingServingTableViewCell.swift; sourceTree = "<group>"; };
 		8F8A37291CBAB2A200A1B8F5 /* RatingServingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RatingServingTableViewCell.xib; path = DetailsCell/RatingServingTableViewCell.xib; sourceTree = "<group>"; };
-		8F8A372A1CBAB2A200A1B8F5 /* UIPickerViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIPickerViewTableViewCell.swift; path = DetailsCell/UIPickerViewTableViewCell.swift; sourceTree = "<group>"; };
-		8F8A372B1CBAB2A200A1B8F5 /* UIPickerViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UIPickerViewTableViewCell.xib; path = DetailsCell/UIPickerViewTableViewCell.xib; sourceTree = "<group>"; };
 		8F8A37301CBAB9C500A1B8F5 /* PreparingBakingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreparingBakingTableViewCell.swift; path = DetailsCell/PreparingBakingTableViewCell.swift; sourceTree = "<group>"; };
 		8F8A37311CBAB9C500A1B8F5 /* PreparingBakingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreparingBakingTableViewCell.xib; path = DetailsCell/PreparingBakingTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -245,8 +245,8 @@
 				8F655B481CA984A500E04615 /* MoreImagesTableViewCell.xib */,
 				8F87997E1CB5866E007E477A /* PickerViewTableViewCell.swift */,
 				8F87997F1CB5866E007E477A /* PickerViewTableViewCell.xib */,
-				8F8A372A1CBAB2A200A1B8F5 /* UIPickerViewTableViewCell.swift */,
-				8F8A372B1CBAB2A200A1B8F5 /* UIPickerViewTableViewCell.xib */,
+				8F40009B1CC6A0B900031175 /* UIPickerViewController.swift */,
+				8F4000991CC69FD400031175 /* UIPickerViewController.xib */,
 				8F8A37281CBAB2A200A1B8F5 /* RatingServingTableViewCell.swift */,
 				8F8A37291CBAB2A200A1B8F5 /* RatingServingTableViewCell.xib */,
 				8F8A37301CBAB9C500A1B8F5 /* PreparingBakingTableViewCell.swift */,
@@ -376,9 +376,9 @@
 				8F655B441CA979DC00E04615 /* KICamera.png in Resources */,
 				8F8799811CB5866E007E477A /* PickerViewTableViewCell.xib in Resources */,
 				8F655B3D1CA970D700E04615 /* ImageTableViewCell.xib in Resources */,
+				8F40009A1CC69FD400031175 /* UIPickerViewController.xib in Resources */,
 				8F655B251CA7D61C00E04615 /* ConseilsTableViewCell.xib in Resources */,
 				8F55B3121CAC38E1007BC1ED /* DetailsParallaxViewController.xib in Resources */,
-				8F8A372F1CBAB2A200A1B8F5 /* UIPickerViewTableViewCell.xib in Resources */,
 				8F8A37331CBAB9C500A1B8F5 /* PreparingBakingTableViewCell.xib in Resources */,
 				8F8A372D1CBAB2A200A1B8F5 /* RatingServingTableViewCell.xib in Resources */,
 				8F655B4A1CA984A500E04615 /* MoreImagesTableViewCell.xib in Resources */,
@@ -424,12 +424,12 @@
 				8F655B321CA8697C00E04615 /* RatingTableViewCell.swift in Sources */,
 				8F655B461CA979DC00E04615 /* KIImagePager.m in Sources */,
 				8F8A371E1CBAB00400A1B8F5 /* SecondDetailsParallaxViewController.swift in Sources */,
-				8F8A372E1CBAB2A200A1B8F5 /* UIPickerViewTableViewCell.swift in Sources */,
 				8F655B371CA87FDC00E04615 /* ParallaxDetailsViewProtocol.swift in Sources */,
 				8F655B201CA7079000E04615 /* InfoDetailsTableViewCell.swift in Sources */,
 				8F655B2C1CA862B800E04615 /* MoreTableViewCell.swift in Sources */,
 				8F655AED1CA706B500E04615 /* AppDelegate.swift in Sources */,
 				8F8A37321CBAB9C500A1B8F5 /* PreparingBakingTableViewCell.swift in Sources */,
+				8F40009C1CC6A0B900031175 /* UIPickerViewController.swift in Sources */,
 				8F55B3151CAC3A76007BC1ED /* InitialTableViewController.swift in Sources */,
 				8F8799801CB5866E007E477A /* PickerViewTableViewCell.swift in Sources */,
 				8F55B30E1CAB0244007BC1ED /* KMScrollingHeaderView.m in Sources */,

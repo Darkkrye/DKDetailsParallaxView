@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ParallaxDetailsViewDelegate, KMScrollingHeaderViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ParallaxDetailsViewDelegate, KMScrollingHeaderViewDelegate, UIPickerViewDelegate {
     
     // MARK: - Private Constants
     let buttonBack = UIButton(type: .Custom)
@@ -34,6 +34,8 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
     var imageUser: UIImage!
     
     var typePickerShouldOpen = false
+    
+    var selectedCounterParty: String?
     
     let array = ["Lorem", "Ipsum", "Dolor", "Sit", "Amet"]
     
@@ -111,16 +113,17 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
             break
             
         case 2:
-            var uiPickerViewCell: UIPickerViewTableViewCell! = tableView.dequeueReusableCellWithIdentifier("UIPickerViewTableViewCell") as? UIPickerViewTableViewCell
+            var pickerViewCell: PickerViewTableViewCell! = tableView.dequeueReusableCellWithIdentifier("PickerViewTableViewCell") as? PickerViewTableViewCell
             
-            if uiPickerViewCell == nil {
-                uiPickerViewCell = UIPickerViewTableViewCell.uiPickerViewCell()
+            if pickerViewCell == nil {
+                pickerViewCell = PickerViewTableViewCell.pickerViewCell()
             }
             
-            uiPickerViewCell.compensationPickerView.delegate = self
-            uiPickerViewCell.compensationPickerView.dataSource = self
+            if self.selectedCounterParty != nil {
+                pickerViewCell.compensationLabel.text = self.selectedCounterParty
+            }
             
-            cell = uiPickerViewCell
+            cell = pickerViewCell
             
             break
             
@@ -143,7 +146,13 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
                 conseilsCell = ConseilsTableViewCell.conseilsCell()
             }
             
-            conseilsCell.conseilsLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum neque ante, sed euismod ipsum aliquam et. Proin erat nulla, auctor eget convallis scelerisque, pulvinar eu tellus. Vestibulum molestie in turpis vitae convallis. Nunc tincidunt sapien non elit luctus, porta scelerisque erat mollis. Integer rutrum elit ut diam maximus venenatis. Duis sollicitudin lectus in lacus venenatis suscipit. Nam pharetra eu nisi quis consequat. Curabitur ultricies purus et risus blandit, a faucibus leo scelerisque. Phasellus et eleifend nisl."
+            conseilsCell.conseilsLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum neque ante, sed euismod ipsum aliquam et. Proin erat nulla, auctor eget convallis scelerisque, pulvinar eu tellus. Vestibulum molestie in turpis vitae convallis. Nunc tincidunt sapien non elit luctus, "
+            var i = 0
+            for c in (conseilsCell.conseilsLabel.text?.characters)! {
+                i += 1
+            }
+            print(i)
+            
             cell = conseilsCell
             
             break
@@ -199,38 +208,14 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 0 && indexPath.row == 2 {
+        if let _ = self.scrollingHeaderView.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: indexPath.row, inSection: indexPath.section)) as? PickerViewTableViewCell {
             
-            self.typePickerShouldOpen = !typePickerShouldOpen
+            let pvc = UIPickerViewController(nibName: "UIPickerViewController", bundle: nil)
+            pvc.delegate = self
+            pvc.view.frame = self.view.frame
+            pvc.counterParties = self.array
             
-            self.scrollingHeaderView.tableView.beginUpdates()
-            
-            let beforeCell = self.scrollingHeaderView.tableView.cellForRowAtIndexPath(indexPath)
-            let cell = self.scrollingHeaderView.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: indexPath.row + 1, inSection: indexPath.section)) as! UIPickerViewTableViewCell
-            
-            if self.typePickerShouldOpen {
-                cell.hidden = false
-                
-                beforeCell!.layer.shadowColor = UIColor.blackColor().CGColor
-                beforeCell!.layer.shadowOpacity = 0.5
-                beforeCell!.layer.shadowOffset = CGSizeMake(0, 5)
-                
-                cell.layer.shadowColor = UIColor.blackColor().CGColor
-                cell.layer.shadowOpacity = 0.5
-                cell.layer.shadowOffset = CGSizeMake(0, 5)
-            } else {
-                cell.hidden = true
-                
-                beforeCell!.layer.shadowColor = UIColor.clearColor().CGColor
-                beforeCell!.layer.shadowOpacity = 0
-                beforeCell!.layer.shadowOffset = CGSizeMake(0, 0)
-                
-                cell.layer.shadowColor = UIColor.clearColor().CGColor
-                cell.layer.shadowOpacity = 0
-                cell.layer.shadowOffset = CGSizeMake(0, 0)
-            }
-            
-            self.scrollingHeaderView.tableView.endUpdates()
+            self.presentViewController(pvc, animated: true, completion: nil)
         }
     }
     
@@ -247,7 +232,7 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
             break
             
         case 2:
-            height = 99
+            height = 44
             break
             
         case 3,4:
@@ -350,7 +335,7 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     // MARK: Delegates UIPickerViewDelegate & UIPickerViewDataSource
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    /*func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print(self.array[row])
     }
     
@@ -364,7 +349,7 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
-    }
+    }*/
     
     
     // MARK: - Personnal Delegates
@@ -410,6 +395,16 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
         
         self.blackImageView.addSubview(self.newImageView)
         self.view.addSubview(self.blackImageView)
+    }
+    
+    func pickerViewUpdateLabel(button: UIButton, text: String) {
+        for cell in self.scrollingHeaderView.tableView.visibleCells {
+            if let theCell = cell as? PickerViewTableViewCell {
+                theCell.compensationLabel.text = text
+                self.selectedCounterParty = text
+                self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+            }
+        }
     }
     
     

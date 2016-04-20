@@ -15,7 +15,7 @@ class PickerViewTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.compensationLabel.text = "Test"
+        self.compensationLabel.text = "Choisir une compensation"
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

@@ -24,7 +24,7 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star_icon" translatesAutoresizingMaskIntoConstraints="NO" id="a1i-Ol-B6A">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compensation_icon" translatesAutoresizingMaskIntoConstraints="NO" id="a1i-Ol-B6A">
                         <rect key="frame" x="8" y="11" width="22" height="22"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="22" id="ZIU-US-FOE"/>
@@ -51,6 +51,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="star_icon" width="30" height="30"/>
+        <image name="compensation_icon" width="30" height="30"/>
     </resources>
 </document>
