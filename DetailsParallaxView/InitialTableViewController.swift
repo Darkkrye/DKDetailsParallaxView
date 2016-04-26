@@ -25,6 +25,12 @@ class InitialTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        UIApplication.sharedApplication().statusBarHidden = false
+    }
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch indexPath.row {
         case 0:
@@ -33,6 +39,10 @@ class InitialTableViewController: UITableViewController {
             
         case 1:
             let myVC = SecondDetailsParallaxViewController(nibName:  "SecondDetailsParallaxViewController", bundle: nil)
+            self.navigationController?.pushViewController(myVC, animated: true)
+            
+        case 2:
+            let myVC = ThirdDetailsParallaxViewController(nibName: "ThirdDetailsParallaxViewController", bundle: nil)
             self.navigationController?.pushViewController(myVC, animated: true)
             
         default:

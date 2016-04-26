@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		8F40009A1CC69FD400031175 /* UIPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F4000991CC69FD400031175 /* UIPickerViewController.xib */; };
 		8F40009C1CC6A0B900031175 /* UIPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F40009B1CC6A0B900031175 /* UIPickerViewController.swift */; };
+		8F4000AE1CCBBAD100031175 /* ThirdDetailsParallaxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F4000AD1CCBBAD100031175 /* ThirdDetailsParallaxViewController.xib */; };
+		8F4000B01CCBBB1700031175 /* ThirdDetailsParallaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4000AF1CCBBB1700031175 /* ThirdDetailsParallaxViewController.swift */; };
+		8F4000B31CCBC16300031175 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4000B11CCBC16300031175 /* InfoTableViewCell.swift */; };
+		8F4000B41CCBC16300031175 /* InfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F4000B21CCBC16300031175 /* InfoTableViewCell.xib */; };
 		8F55B30E1CAB0244007BC1ED /* KMScrollingHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F55B30D1CAB0244007BC1ED /* KMScrollingHeaderView.m */; };
 		8F55B3111CAC38E1007BC1ED /* DetailsParallaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F55B30F1CAC38E1007BC1ED /* DetailsParallaxViewController.swift */; };
 		8F55B3121CAC38E1007BC1ED /* DetailsParallaxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F55B3101CAC38E1007BC1ED /* DetailsParallaxViewController.xib */; };
@@ -67,6 +71,10 @@
 /* Begin PBXFileReference section */
 		8F4000991CC69FD400031175 /* UIPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UIPickerViewController.xib; path = DetailsCell/UIPickerViewController.xib; sourceTree = "<group>"; };
 		8F40009B1CC6A0B900031175 /* UIPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIPickerViewController.swift; path = DetailsCell/UIPickerViewController.swift; sourceTree = "<group>"; };
+		8F4000AD1CCBBAD100031175 /* ThirdDetailsParallaxViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdDetailsParallaxViewController.xib; sourceTree = "<group>"; };
+		8F4000AF1CCBBB1700031175 /* ThirdDetailsParallaxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdDetailsParallaxViewController.swift; sourceTree = "<group>"; };
+		8F4000B11CCBC16300031175 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoTableViewCell.swift; path = DetailsCell/InfoTableViewCell.swift; sourceTree = "<group>"; };
+		8F4000B21CCBC16300031175 /* InfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InfoTableViewCell.xib; path = DetailsCell/InfoTableViewCell.xib; sourceTree = "<group>"; };
 		8F55B30C1CAB0244007BC1ED /* KMScrollingHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMScrollingHeaderView.h; sourceTree = "<group>"; };
 		8F55B30D1CAB0244007BC1ED /* KMScrollingHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMScrollingHeaderView.m; sourceTree = "<group>"; };
 		8F55B30F1CAC38E1007BC1ED /* DetailsParallaxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsParallaxViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +164,8 @@
 				8F55B3101CAC38E1007BC1ED /* DetailsParallaxViewController.xib */,
 				8F8A371D1CBAB00400A1B8F5 /* SecondDetailsParallaxViewController.swift */,
 				8F8A371F1CBAB03300A1B8F5 /* SecondDetailsParallaxViewController.xib */,
+				8F4000AF1CCBBB1700031175 /* ThirdDetailsParallaxViewController.swift */,
+				8F4000AD1CCBBAD100031175 /* ThirdDetailsParallaxViewController.xib */,
 			);
 			name = ViewController;
 			path = "View Controller";
@@ -251,6 +261,8 @@
 				8F8A37291CBAB2A200A1B8F5 /* RatingServingTableViewCell.xib */,
 				8F8A37301CBAB9C500A1B8F5 /* PreparingBakingTableViewCell.swift */,
 				8F8A37311CBAB9C500A1B8F5 /* PreparingBakingTableViewCell.xib */,
+				8F4000B11CCBC16300031175 /* InfoTableViewCell.swift */,
+				8F4000B21CCBC16300031175 /* InfoTableViewCell.xib */,
 			);
 			name = DetailsCell;
 			sourceTree = "<group>";
@@ -378,8 +390,10 @@
 				8F655B3D1CA970D700E04615 /* ImageTableViewCell.xib in Resources */,
 				8F40009A1CC69FD400031175 /* UIPickerViewController.xib in Resources */,
 				8F655B251CA7D61C00E04615 /* ConseilsTableViewCell.xib in Resources */,
+				8F4000B41CCBC16300031175 /* InfoTableViewCell.xib in Resources */,
 				8F55B3121CAC38E1007BC1ED /* DetailsParallaxViewController.xib in Resources */,
 				8F8A37331CBAB9C500A1B8F5 /* PreparingBakingTableViewCell.xib in Resources */,
+				8F4000AE1CCBBAD100031175 /* ThirdDetailsParallaxViewController.xib in Resources */,
 				8F8A372D1CBAB2A200A1B8F5 /* RatingServingTableViewCell.xib in Resources */,
 				8F655B4A1CA984A500E04615 /* MoreImagesTableViewCell.xib in Resources */,
 				8F55B31D1CB03B83007BC1ED /* RatingTableViewCell.xib in Resources */,
@@ -416,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F655B281CA8616500E04615 /* DescriptionTableViewCell.swift in Sources */,
+				8F4000B31CCBC16300031175 /* InfoTableViewCell.swift in Sources */,
 				8F655B491CA984A500E04615 /* MoreImagesTableViewCell.swift in Sources */,
 				8F8A372C1CBAB2A200A1B8F5 /* RatingServingTableViewCell.swift in Sources */,
 				8F655B241CA7D61C00E04615 /* ConseilsTableViewCell.swift in Sources */,
@@ -424,6 +439,7 @@
 				8F655B321CA8697C00E04615 /* RatingTableViewCell.swift in Sources */,
 				8F655B461CA979DC00E04615 /* KIImagePager.m in Sources */,
 				8F8A371E1CBAB00400A1B8F5 /* SecondDetailsParallaxViewController.swift in Sources */,
+				8F4000B01CCBBB1700031175 /* ThirdDetailsParallaxViewController.swift in Sources */,
 				8F655B371CA87FDC00E04615 /* ParallaxDetailsViewProtocol.swift in Sources */,
 				8F655B201CA7079000E04615 /* InfoDetailsTableViewCell.swift in Sources */,
 				8F655B2C1CA862B800E04615 /* MoreTableViewCell.swift in Sources */,

@@ -147,11 +147,6 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
             }
             
             conseilsCell.conseilsLabel.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum neque ante, sed euismod ipsum aliquam et. Proin erat nulla, auctor eget convallis scelerisque, pulvinar eu tellus. Vestibulum molestie in turpis vitae convallis. Nunc tincidunt sapien non elit luctus, "
-            var i = 0
-            for c in (conseilsCell.conseilsLabel.text?.characters)! {
-                i += 1
-            }
-            print(i)
             
             cell = conseilsCell
             

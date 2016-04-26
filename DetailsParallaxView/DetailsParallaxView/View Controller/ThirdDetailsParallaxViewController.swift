@@ -1,14 +1,14 @@
 //
-//  SecondDetailsParallaxTableViewController.swift
+//  ThirdDetailsParallaxViewController.swift
 //  DetailsParallaxView
 //
-//  Created by Pierre on 10/04/2016.
+//  Created by Pierre on 23/04/2016.
 //  Copyright © 2016 Pierre. All rights reserved.
 //
 
 import UIKit
 
-class SecondDetailsParallaxViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ParallaxDetailsViewDelegate, KMScrollingHeaderViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class ThirdDetailsParallaxViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ParallaxDetailsViewDelegate, KMScrollingHeaderViewDelegate {
     
     // MARK: - Private Constants
     let buttonBack = UIButton(type: .Custom)
@@ -34,8 +34,6 @@ class SecondDetailsParallaxViewController: UIViewController, UITableViewDelegate
     var imageUser: UIImage!
     
     var typePickerShouldOpen = false
-    
-    let array = ["Lorem", "Ipsum", "Dolor", "Sit", "Amet"]
     
     
     // MARK: - IBOutlets
@@ -85,7 +83,7 @@ class SecondDetailsParallaxViewController: UIViewController, UITableViewDelegate
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 5
     }
     
     
@@ -94,21 +92,16 @@ class SecondDetailsParallaxViewController: UIViewController, UITableViewDelegate
         
         switch indexPath.row {
         case 1:
-            var infoDetailsCell: InfoDetailsTableViewCell! = tableView.dequeueReusableCellWithIdentifier("InfoDetailsTableViewCell") as? InfoDetailsTableViewCell
+            var infoCell: InfoTableViewCell! = tableView.dequeueReusableCellWithIdentifier("InfoTableViewCell") as? InfoTableViewCell
             
-            if infoDetailsCell == nil {
-                infoDetailsCell = InfoDetailsTableViewCell.infoDetails()
+            if infoCell == nil {
+                infoCell = InfoTableViewCell.info()
             }
             
-            infoDetailsCell.authorImageView.image = self.imageUser
-            infoDetailsCell.titleLabel.text = "Re Test"
-            infoDetailsCell.authorLabel.text = "Re Test2"
-            infoDetailsCell.reserveButton.setTitle("Autres recettes", forState: .Normal)
+            infoCell.userImageView.image = self.imageUser
+            infoCell.userTitleLabel.text = "Pseudo"
             
-            
-            infoDetailsCell.delegate = self
-            
-            cell = infoDetailsCell
+            cell = infoCell
             
             break
             
@@ -165,37 +158,6 @@ class SecondDetailsParallaxViewController: UIViewController, UITableViewDelegate
             
             break
             
-        case 5:
-            var descriptionCell: DescriptionTableViewCell! = tableView.dequeueReusableCellWithIdentifier("DescriptionTableViewCell") as? DescriptionTableViewCell
-            
-            if descriptionCell == nil {
-                descriptionCell = DescriptionTableViewCell.descriptionCell()
-            }
-            
-            let description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dictum neque ante, sed euismod ipsum aliquam et. Proin erat nulla, auctor eget convallis scelerisque, pulvinar eu tellus. Vestibulum molestie in turpis vitae convallis. Nunc tincidunt sapien non elit luctus, porta scelerisque erat mollis. Integer rutrum elit ut diam maximus venenatis. Duis sollicitudin lectus in lacus venenatis suscipit. Nam pharetra eu nisi quis consequat. Curabitur ultricies purus et risus blandit, a faucibus leo scelerisque. Phasellus et eleifend nisl."
-            
-            descriptionCell.descriptionLabel.text = description
-            
-            cell = descriptionCell
-            
-            break
-            
-        case 6:
-            var moreImagesCell: MoreImagesTableViewCell! = tableView.dequeueReusableCellWithIdentifier("MoreImagesTableViewCell") as? MoreImagesTableViewCell
-            
-            if moreImagesCell == nil {
-                moreImagesCell = MoreImagesTableViewCell.moreImagesCell()
-            }
-            
-            moreImagesCell.images = self.images
-            moreImagesCell.imagePager.reloadData()
-            
-            moreImagesCell.delegate = self
-            
-            cell = moreImagesCell
-            
-            break
-            
         default:
             break
         }
@@ -215,18 +177,14 @@ class SecondDetailsParallaxViewController: UIViewController, UITableViewDelegate
             break
             
         case 1:
-            height = 104
+            height = 56
             break
             
         case 2,3:
             height = 66
             break
             
-        case 4,5:
-            height = 250
-            break
-            
-        case 6:
+        case 4:
             height = 250
             break
             
@@ -313,23 +271,6 @@ class SecondDetailsParallaxViewController: UIViewController, UITableViewDelegate
         }
     }
     
-    // MARK: Delegates UIPickerViewDelegate & UIPickerViewDataSource
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print(self.array[row])
-    }
-    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.array[row]
-    }
-    
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.array.count
-    }
-    
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
     
     // MARK: - Personnal Delegates
     // MARK: Delegates KMScrollingHeaderViewDelegate
@@ -343,40 +284,21 @@ class SecondDetailsParallaxViewController: UIViewController, UITableViewDelegate
     
     // MARK: Delegates ParallaxDetailsViewProtocol
     func favoriteAuthorButtonTapped(button: UIButton) {
-        print("Auteur en favoris")
     }
     
     func reserveButtonTapped(button: UIButton) {
-        print("Bouton Autres Recettes")
     }
     
     func moreButtonTapped(button: UIButton) {
-        print("Bouton Plus")
     }
     
     func theMoreButtonTapped(button: UIButton) {
     }
     
     func imagePager(imagePager: KIImagePager, didSelectImage image: UIImage) {
-        self.blackImageView.frame = self.view.frame
-        self.blackImageView.backgroundColor = .blackColor()
-        
-        self.newImageView.image = image
-        self.newImageView.contentMode = .ScaleAspectFit
-        self.newImageView.userInteractionEnabled = true
-        self.newImageView.frame = self.view.frame
-        
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(DetailsParallaxViewController.dismissFullScreenMode(_:)))
-        newImageView.addGestureRecognizer(tap)
-        
-        
-        self.blackImageView.addSubview(self.newImageView)
-        self.view.addSubview(self.blackImageView)
     }
     
     func pickerViewUpdateLabel(button: UIButton, text: String) {
-        
     }
     
     
@@ -400,7 +322,7 @@ class SecondDetailsParallaxViewController: UIViewController, UITableViewDelegate
         
         self.view.addSubview(buttonBack)
         
-        self.navBarTitleLabel.text = "Burger"
+        self.navBarTitleLabel.text = "Pseudo"
     }
     
     func isRowVisible() -> Bool {
