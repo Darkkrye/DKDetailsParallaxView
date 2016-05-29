@@ -17,4 +17,5 @@ import UIKit
     func theMoreButtonTapped(button: UIButton)
     func pickerViewUpdateLabel(button: UIButton, text: String)
     func imagePager(imagePager: KIImagePager, didSelectImage image: UIImage)
+    func cellSelected(button: UIButton)
 }

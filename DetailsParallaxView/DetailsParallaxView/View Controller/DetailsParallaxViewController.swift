@@ -402,6 +402,10 @@ class DetailsParallaxViewController: UIViewController, UITableViewDelegate, UITa
         }
     }
     
+    func cellSelected(button: UIButton) {
+        
+    }
+    
     
     // MARK: - Personnal Methods
     func setupDetailsPageView() {

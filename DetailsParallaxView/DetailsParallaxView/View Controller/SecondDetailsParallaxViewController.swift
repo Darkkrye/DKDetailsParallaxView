@@ -379,6 +379,10 @@ class SecondDetailsParallaxViewController: UIViewController, UITableViewDelegate
         
     }
     
+    func cellSelected(button: UIButton) {
+        
+    }
+    
     
     // MARK: - Personnal Methods
     func setupDetailsPageView() {

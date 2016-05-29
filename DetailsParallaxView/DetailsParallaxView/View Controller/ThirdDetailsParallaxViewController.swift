@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ThirdDetailsParallaxViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ParallaxDetailsViewDelegate, KMScrollingHeaderViewDelegate {
+class ThirdDetailsParallaxViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ParallaxDetailsViewDelegate, KMScrollingHeaderViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
     // MARK: - Private Constants
     let buttonBack = UIButton(type: .Custom)
@@ -28,6 +28,10 @@ class ThirdDetailsParallaxViewController: UIViewController, UITableViewDelegate,
     var imageLocation = CGPoint(x: 0, y: 0)
     
     var stringImages = ["http://www.blog.marche-prive.com/wp-content/uploads/2015/04/food58-burger-two-bleu-bacon.jpg",
+                        "http://img1.gtsstatic.com/wallpapers/9b04890a3b057f005949ee85b16fc931_large.jpeg",
+                        "http://www.blog.marche-prive.com/wp-content/uploads/2015/04/food58-burger-two-bleu-bacon.jpg",
+                        "http://img1.gtsstatic.com/wallpapers/9b04890a3b057f005949ee85b16fc931_large.jpeg",
+                        "http://www.blog.marche-prive.com/wp-content/uploads/2015/04/food58-burger-two-bleu-bacon.jpg",
                         "http://img1.gtsstatic.com/wallpapers/9b04890a3b057f005949ee85b16fc931_large.jpeg"]
     
     var images = [UIImage]()
@@ -60,7 +64,7 @@ class ThirdDetailsParallaxViewController: UIViewController, UITableViewDelegate,
             }
         }
         
-        if let url = NSURL(string: "https://lh4.googleusercontent.com/-yvDZHxTUzZg/AAAAAAAAAAI/AAAAAAAAAAA/AMW9IgfPYUvVK7Q5sjWLob8pxqXyeJMTMQ/s96-c-mo/photo.jpg"), data = NSData(contentsOfURL: url) {
+        if let url = NSURL(string: "http://st.depositphotos.com/2101611/3923/v/950/depositphotos_39238767-Businessman-avatar-profile-picture.jpg"), data = NSData(contentsOfURL: url) {
             self.imageUser = UIImage(data: data)
         }
     }
@@ -83,7 +87,7 @@ class ThirdDetailsParallaxViewController: UIViewController, UITableViewDelegate,
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     
     
@@ -106,55 +110,53 @@ class ThirdDetailsParallaxViewController: UIViewController, UITableViewDelegate,
             break
             
         case 2:
-            var ratingServingCell: RatingServingTableViewCell! = tableView.dequeueReusableCellWithIdentifier("RatingServingTableViewCell") as? RatingServingTableViewCell
+            var moreButtonCell: MoreTableViewCell! = tableView.dequeueReusableCellWithIdentifier("MoreTableViewCell") as? MoreTableViewCell
             
-            if ratingServingCell == nil {
-                ratingServingCell = RatingServingTableViewCell.ratingServingCell()
+            if moreButtonCell == nil {
+                moreButtonCell = MoreTableViewCell.moreCell()
             }
             
-            ratingServingCell.noteLabel.text = "4"
-            ratingServingCell.countLabel.text = "125 votes"
-            ratingServingCell.servingLabel.text = "3 pers."
+            moreButtonCell.moreButton.setTitle("Modifier mon profil", forState: .Normal)
+            moreButtonCell.delegate = self
             
-            cell = ratingServingCell
-            
-            break
+            cell = moreButtonCell
             
         case 3:
-            var preparingBakingCell: PreparingBakingTableViewCell! = tableView.dequeueReusableCellWithIdentifier("PreparingBakingTableViewCell") as? PreparingBakingTableViewCell
+            var horizontalScrollCell: HorizontalScrollTableViewCell! = tableView.dequeueReusableCellWithIdentifier("HorizontalScrollTableViewCell") as? HorizontalScrollTableViewCell
             
-            if preparingBakingCell == nil {
-                preparingBakingCell = PreparingBakingTableViewCell.preparingBakingCell()
+            if horizontalScrollCell == nil {
+                horizontalScrollCell = HorizontalScrollTableViewCell.horizontalScroll()
             }
             
-            preparingBakingCell.preparingTimeLabel.text = "20 min"
-            preparingBakingCell.bakingTimeLabel.text = "25 min"
+            horizontalScrollCell.titleLabel.text = "Plats en cours"
             
-            cell = preparingBakingCell
+            cell = horizontalScrollCell
             
             break
             
         case 4:
-            var descriptionCell: DescriptionTableViewCell! = tableView.dequeueReusableCellWithIdentifier("DescriptionTableViewCell") as? DescriptionTableViewCell
+            var horizontalScrollCell: HorizontalScrollTableViewCell! = tableView.dequeueReusableCellWithIdentifier("HorizontalScrollTableViewCell") as? HorizontalScrollTableViewCell
             
-            if descriptionCell == nil {
-                descriptionCell = DescriptionTableViewCell.descriptionCell()
+            if horizontalScrollCell == nil {
+                horizontalScrollCell = HorizontalScrollTableViewCell.horizontalScroll()
             }
             
-            var description = "• Pains Burger, \r\n"
-            description += "• Steack Haché, \r\n"
-            description += "• Tomates, \r\n"
-            description += "• Salade, \r\n"
-            description += "• Oignons rouges, \r\n"
-            description += "• Mayonnaise, \r\n"
-            description += "• Bacon, \r\n"
-            description += "• Cornichons, \r\n"
-            description += "• Fromage"
+            horizontalScrollCell.titleLabel.text = "Recettes déposées"
             
-            descriptionCell.descriptionLabel.text = description
-            descriptionCell.iconImageView.image = UIImage(named: "ingredients")
+            cell = horizontalScrollCell
             
-            cell = descriptionCell
+            break
+            
+        case 5:
+            var horizontalScrollCell: HorizontalScrollTableViewCell! = tableView.dequeueReusableCellWithIdentifier("HorizontalScrollTableViewCell") as? HorizontalScrollTableViewCell
+            
+            if horizontalScrollCell == nil {
+                horizontalScrollCell = HorizontalScrollTableViewCell.horizontalScroll()
+            }
+            
+            horizontalScrollCell.titleLabel.text = "Anciens plats"
+            
+            cell = horizontalScrollCell
             
             break
             
@@ -163,6 +165,14 @@ class ThirdDetailsParallaxViewController: UIViewController, UITableViewDelegate,
         }
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.contentView.backgroundColor = UIColor.clearColor()
+        if (cell is HorizontalScrollTableViewCell) {
+            let similarMovieCell: HorizontalScrollTableViewCell = (cell as! HorizontalScrollTableViewCell)
+            similarMovieCell.setCollectionViewDataSourceDelegate(self, index: indexPath.row)
+        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -180,12 +190,12 @@ class ThirdDetailsParallaxViewController: UIViewController, UITableViewDelegate,
             height = 56
             break
             
-        case 2,3:
-            height = 66
+        case 2:
+            height = 62
             break
             
-        case 4:
-            height = 250
+        case 3, 4, 5:
+            height = 140
             break
             
         default:
@@ -276,10 +286,24 @@ class ThirdDetailsParallaxViewController: UIViewController, UITableViewDelegate,
     // MARK: Delegates KMScrollingHeaderViewDelegate
     func detailsPage(scrollingHeaderView: KMScrollingHeaderView!, headerImageView imageView: UIImageView!) {
         dispatch_async(dispatch_get_main_queue(),{
-            imageView.image = self.images.first
+            imageView.image = self.imageUser
             imageView.contentMode = .ScaleAspectFit
             
         })
+    }
+    
+    // MARK: Delegates CollectionView
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.images.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell: HorizontalScrollCollectionViewCell = (collectionView.dequeueReusableCellWithReuseIdentifier("HorizontalScrollCollectionViewCell", forIndexPath: indexPath) as! HorizontalScrollCollectionViewCell)
+        
+        
+        cell.imageImageView.image = self.images[indexPath.row]
+        cell.nameLabel.text = "Burger"
+        return cell
     }
     
     // MARK: Delegates ParallaxDetailsViewProtocol
@@ -293,12 +317,22 @@ class ThirdDetailsParallaxViewController: UIViewController, UITableViewDelegate,
     }
     
     func theMoreButtonTapped(button: UIButton) {
+        let alertController = UIAlertController(title: "Modification du profil", message:
+            "// TODO \nChamps de modifications du profil !", preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "Modifier", style: .Default,handler: nil))
+        alertController.addAction(UIAlertAction(title: "Annuler", style: .Cancel,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     func imagePager(imagePager: KIImagePager, didSelectImage image: UIImage) {
     }
     
     func pickerViewUpdateLabel(button: UIButton, text: String) {
+    }
+    
+    func cellSelected(button: UIButton) {
+        
     }
     
     

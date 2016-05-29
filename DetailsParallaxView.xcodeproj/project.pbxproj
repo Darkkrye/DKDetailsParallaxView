@@ -49,6 +49,10 @@
 		8F8A372D1CBAB2A200A1B8F5 /* RatingServingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F8A37291CBAB2A200A1B8F5 /* RatingServingTableViewCell.xib */; };
 		8F8A37321CBAB9C500A1B8F5 /* PreparingBakingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8A37301CBAB9C500A1B8F5 /* PreparingBakingTableViewCell.swift */; };
 		8F8A37331CBAB9C500A1B8F5 /* PreparingBakingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F8A37311CBAB9C500A1B8F5 /* PreparingBakingTableViewCell.xib */; };
+		8FEF6D171CD1FDF1002C1A1C /* HorizontalScrollCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEF6D151CD1FDF1002C1A1C /* HorizontalScrollCollectionViewCell.swift */; };
+		8FEF6D181CD1FDF1002C1A1C /* HorizontalScrollCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FEF6D161CD1FDF1002C1A1C /* HorizontalScrollCollectionViewCell.xib */; };
+		8FEF6D1B1CD201F7002C1A1C /* HorizontalScrollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEF6D191CD201F7002C1A1C /* HorizontalScrollTableViewCell.swift */; };
+		8FEF6D1C1CD201F7002C1A1C /* HorizontalScrollTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FEF6D1A1CD201F7002C1A1C /* HorizontalScrollTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +124,10 @@
 		8F8A37291CBAB2A200A1B8F5 /* RatingServingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RatingServingTableViewCell.xib; path = DetailsCell/RatingServingTableViewCell.xib; sourceTree = "<group>"; };
 		8F8A37301CBAB9C500A1B8F5 /* PreparingBakingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreparingBakingTableViewCell.swift; path = DetailsCell/PreparingBakingTableViewCell.swift; sourceTree = "<group>"; };
 		8F8A37311CBAB9C500A1B8F5 /* PreparingBakingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreparingBakingTableViewCell.xib; path = DetailsCell/PreparingBakingTableViewCell.xib; sourceTree = "<group>"; };
+		8FEF6D151CD1FDF1002C1A1C /* HorizontalScrollCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HorizontalScrollCollectionViewCell.swift; path = DetailsCell/HorizontalScrollCollectionViewCell.swift; sourceTree = "<group>"; };
+		8FEF6D161CD1FDF1002C1A1C /* HorizontalScrollCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HorizontalScrollCollectionViewCell.xib; path = DetailsCell/HorizontalScrollCollectionViewCell.xib; sourceTree = "<group>"; };
+		8FEF6D191CD201F7002C1A1C /* HorizontalScrollTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HorizontalScrollTableViewCell.swift; path = DetailsCell/HorizontalScrollTableViewCell.swift; sourceTree = "<group>"; };
+		8FEF6D1A1CD201F7002C1A1C /* HorizontalScrollTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HorizontalScrollTableViewCell.xib; path = DetailsCell/HorizontalScrollTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +271,10 @@
 				8F8A37311CBAB9C500A1B8F5 /* PreparingBakingTableViewCell.xib */,
 				8F4000B11CCBC16300031175 /* InfoTableViewCell.swift */,
 				8F4000B21CCBC16300031175 /* InfoTableViewCell.xib */,
+				8FEF6D151CD1FDF1002C1A1C /* HorizontalScrollCollectionViewCell.swift */,
+				8FEF6D161CD1FDF1002C1A1C /* HorizontalScrollCollectionViewCell.xib */,
+				8FEF6D191CD201F7002C1A1C /* HorizontalScrollTableViewCell.swift */,
+				8FEF6D1A1CD201F7002C1A1C /* HorizontalScrollTableViewCell.xib */,
 			);
 			name = DetailsCell;
 			sourceTree = "<group>";
@@ -401,7 +413,9 @@
 				8F655B391CA95F6F00E04615 /* Main.storyboard in Resources */,
 				8F655B2D1CA862B800E04615 /* MoreTableViewCell.xib in Resources */,
 				8F655B291CA8616500E04615 /* DescriptionTableViewCell.xib in Resources */,
+				8FEF6D1C1CD201F7002C1A1C /* HorizontalScrollTableViewCell.xib in Resources */,
 				8F655AF41CA706B500E04615 /* Assets.xcassets in Resources */,
+				8FEF6D181CD1FDF1002C1A1C /* HorizontalScrollCollectionViewCell.xib in Resources */,
 				8F655B211CA7079000E04615 /* InfoDetailsTableViewCell.xib in Resources */,
 				8F8A37201CBAB03300A1B8F5 /* SecondDetailsParallaxViewController.xib in Resources */,
 				8F655B451CA979DC00E04615 /* KICamera@2x.png in Resources */,
@@ -437,6 +451,7 @@
 				8F655B3C1CA970D700E04615 /* ImageTableViewCell.swift in Sources */,
 				8F55B3111CAC38E1007BC1ED /* DetailsParallaxViewController.swift in Sources */,
 				8F655B321CA8697C00E04615 /* RatingTableViewCell.swift in Sources */,
+				8FEF6D1B1CD201F7002C1A1C /* HorizontalScrollTableViewCell.swift in Sources */,
 				8F655B461CA979DC00E04615 /* KIImagePager.m in Sources */,
 				8F8A371E1CBAB00400A1B8F5 /* SecondDetailsParallaxViewController.swift in Sources */,
 				8F4000B01CCBBB1700031175 /* ThirdDetailsParallaxViewController.swift in Sources */,
@@ -445,6 +460,7 @@
 				8F655B2C1CA862B800E04615 /* MoreTableViewCell.swift in Sources */,
 				8F655AED1CA706B500E04615 /* AppDelegate.swift in Sources */,
 				8F8A37321CBAB9C500A1B8F5 /* PreparingBakingTableViewCell.swift in Sources */,
+				8FEF6D171CD1FDF1002C1A1C /* HorizontalScrollCollectionViewCell.swift in Sources */,
 				8F40009C1CC6A0B900031175 /* UIPickerViewController.swift in Sources */,
 				8F55B3151CAC3A76007BC1ED /* InitialTableViewController.swift in Sources */,
 				8F8799801CB5866E007E477A /* PickerViewTableViewCell.swift in Sources */,
